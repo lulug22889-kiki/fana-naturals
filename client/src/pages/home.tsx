@@ -54,13 +54,18 @@ export default function Home() {
           </motion.div>
 
           <nav className="hidden md:flex flex-1 justify-center space-x-12">
-            {['Shop', 'Journal', 'Craft', 'About'].map((item) => (
+            {[
+              { name: 'Shop', href: '/products' },
+              { name: 'Journal', href: '#' },
+              { name: 'Craft', href: '/products' },
+              { name: 'About', href: '/about' }
+            ].map((item) => (
               <a 
-                key={item} 
-                href={`#${item.toLowerCase()}`}
+                key={item.name} 
+                href={item.href}
                 className="text-xs uppercase tracking-widest text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
               >
-                {item}
+                {item.name}
                 <span className="absolute -bottom-2 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
@@ -257,7 +262,7 @@ export default function Home() {
         </div>
         
         <div className="flex flex-col md:flex-row justify-between w-full max-w-[1400px] text-xs text-foreground/40">
-          <p>© {new Date().getFullYear()} Fana Naturals. All rights reserved.</p>
+          <p>Fana Naturals © 2026 | Captured Sunlight, Bottled Time.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>

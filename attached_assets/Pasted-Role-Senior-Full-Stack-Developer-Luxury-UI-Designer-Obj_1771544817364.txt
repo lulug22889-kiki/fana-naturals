@@ -1,0 +1,54 @@
+Role: Senior Full-Stack Developer & Luxury UI Designer.
+Objective: Expand the current "Fana Naturals" site with two new pages (About Us and Products) using a highly artistic, sun-drenched, and professional beekeeping aesthetic.
+
+1. Visual Identity & Design DNA:
+
+Base Style: Korean Minimalist (Granhand-inspired) mixed with Organic Modernism.
+
+Core Palette: Warm Oatmeal White (#F7F6F2) for nature/honey content; Deep Studio Charcoal (#2D2D2D) for professional tool sections.
+
+Typography: Serif for artistic headlines (Cormorant Garamond); Sans-serif for clean body text (Inter).
+
+Interactions: Every page transition must be a "Breath-like Fade-in" (0.6s).
+
+2. [Page: About Us - Thirty Years of Harmony]
+
+Hero Image: Use the uploaded photo of the beekeeper in the yellow rapeseed field.
+
+Narrative Copy: - Headline: "Thirty Years of Resonance with the Rhythm of Nature."
+
+Body Text: "Fana Naturals boasts over thirty years of experience in the global beekeeping industry. We are not just traders; we are observers of the delicate bond between bees and the earth."
+
+Core Values (4-Column Grid): - Reverence for Nature: Prioritizing bee health and safety.
+
+Artisan Spirit: We are beekeepers first, business owners second.
+
+Global Vision: Connecting Canadian honey to the international market.
+
+Intellectual Innovation: Exploring cutting-edge tech for bee health.
+
+3. [Page: Products - The Harvest & The Craft]
+
+Section A: The Harvest (Natural Gifts): - Visual: Use macro honeycomb textures. High-key, bright lighting.
+
+Copy: "Captured Sunlight from Canadian No. 1 White Honey. True Source Certified purity."
+
+Section B: The Craft (Professional Equipment):
+
+Visual: Shift to a sophisticated dark background to highlight metallic/wooden textures of smokers and hive tools.
+
+Attributes: Excellent Quality, Affordable, Durable, and Custom Industrial Orders.
+
+CTA: A minimalist "Inquire for Specifications" button.
+
+4. Site Architecture & Technical Implementation:
+
+Navigation: Connect Header links to new routes: /about and /products.
+
+Reusable Layout: Wrap all pages in the established Header and Footer components.
+
+Footer: Add a clean row: "Fana Naturals © 2026 | Captured Sunlight, Bottled Time."
+
+Performance: Optimize for fast loading using Tailwind CSS and Lucide-React thin icons.
+
+Execution: Build these two pages now. Ensure the "Product" page creates a distinct visual contrast between the "Natural Honey" (Bright) and the "Professional Tools" (Dark) sections.
