@@ -49,7 +49,7 @@ export default function Home() {
             className="flex-1 md:flex-none text-center md:text-left"
           >
             <a href="/" className="font-serif text-2xl tracking-[0.2em] font-medium text-foreground uppercase">
-              MEL FLORA
+              Fana Naturals
             </a>
           </motion.div>
 
@@ -233,7 +233,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-20 px-6 md:px-12 bg-background text-center flex flex-col items-center">
-        <h2 className="font-serif text-3xl tracking-[0.2em] uppercase mb-12">MEL FLORA</h2>
+        <h2 className="font-serif text-3xl tracking-[0.2em] uppercase mb-12">Fana Naturals</h2>
         
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 mb-16 w-full max-w-4xl border-b border-foreground/10 pb-16">
           <div className="flex space-x-8">
@@ -257,7 +257,7 @@ export default function Home() {
         </div>
         
         <div className="flex flex-col md:flex-row justify-between w-full max-w-[1400px] text-xs text-foreground/40">
-          <p>© {new Date().getFullYear()} MEL FLORA. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Fana Naturals. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
