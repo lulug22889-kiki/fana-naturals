@@ -1,0 +1,69 @@
+Role: You are a World-Class UI Designer and Frontend Developer. Your goal is to build a high-end, artistic e-commerce landing page for "MEL FLORA" (a premium bee products & tools brand).
+
+Design DNA: - Aesthetic: A fusion of Korean Minimalist (Granhand-style) and Organic Modernism.
+
+Visual Vibe: Sun-drenched, airy, and breathing. It should feel like a high-end art gallery in a wildflower meadow.
+
+Palette: - Base: Oatmeal White (#F7F6F2) for a warm, paper-like texture.
+
+Typography: Deep Charcoal (#2D2D2D)—never pure black.
+
+Accents: Sage Green (#8E9775) and a glowing Amber Gold (#D4A017) for subtle highlights.
+
+Layout Structure & Content:
+
+Header (The Minimalist):
+
+Transparent background, slim navigation links (SHOP, JOURNAL, CRAFT, ABOUT).
+
+Minimalist Serif Logo on the left.
+
+Utility icons (Search, Account, Cart) on the right using ultra-thin stroke lines.
+
+Hero Section (The Sun-Drenched Meadow):
+
+Background: A high-resolution, full-bleed image representing a beekeeper in a vibrant yellow rapeseed field under a clear blue sky (referencing the uploaded "beekeeper" image).
+
+Overlay: A centered, elegant Serif headline: "Captured Sunlight, Bottled Time." - Call to Action: A ghost button (thin border) saying "Explore the Harvest."
+
+Philosophy Section (The Alchemist’s Note):
+
+Large whitespace. A single column of poetic text: "Fana Naturals is born from thirty years of hands-on beekeeping. We treat honey as liquid alchemy and tools as craftsmen’s artifacts." (Integrating text from the uploaded 'Fana Naturals' screenshot).
+
+Featured Categories (The Grid):
+
+Asymmetrical Grid: - Card A (Large): "Raw Honey" - featuring a macro shot of golden honeycomb dripping with nectar.
+
+Card B (Small): "The Craft" - showcasing professional beekeeping tools (smokers, brushes) with a focus on metallic and wooden textures.
+
+Style: No borders, soft natural shadows on hover.
+
+Value Proposition (The Core):
+
+Four minimalist columns with thin line icons:
+
+Love of Honeybees
+
+Passion for Beekeeping
+
+Entrepreneurial Spirit
+
+Innovation
+
+(Source text from the 'Core Values' screenshot).
+
+Footer:
+
+Clean, organized, and light. Social links and newsletter signup in a single, elegant row.
+
+Technical Instructions:
+
+Framework: React + Tailwind CSS.
+
+Typography: Import 'Cormorant Garamond' (Headings) and 'Inter' (Body) from Google Fonts.
+
+Animations: Implement a "Soft Fade-in" for all elements as they enter the viewport using Intersection Observer.
+
+Responsiveness: Maintain the high-end "airy" feel on mobile with generous padding and centered text.
+
+Execution: Please build the complete functional landing page using this architectural and visual logic.
