@@ -31,8 +31,8 @@ export default function Footer() {
           </div>
           
           <div className="flex space-x-6 font-sans text-xs text-foreground/40 tracking-[0.1em] uppercase">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms</a>
+            <a href="/privacy" className="hover:text-foreground transition-colors">Privacy</a>
+            <a href="/terms" className="hover:text-foreground transition-colors">Terms</a>
             <span>© {new Date().getFullYear()}</span>
           </div>
         </div>
