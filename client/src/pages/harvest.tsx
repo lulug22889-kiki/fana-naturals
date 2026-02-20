@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import beePollenImg from "@assets/bigstock-Bee-Pollen-24241154_1771568204060.jpg";
 import rawHoneyImg from "@assets/屏幕快照_2016-09-20_17.53.10_1771568379514.png";
 import royalJellyImg from "@assets/royal_jelly_1771568486547.png";
+import heroBgImg from "@assets/pascal-bullan-k909E1ScuWA-unsplash_1771568577485.jpg";
 
 const chapters = [
   {
@@ -119,8 +120,23 @@ export default function Harvest() {
         className="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
       >
         {/* Intro Slide */}
-        <div className="h-screen w-full flex flex-col justify-center snap-center relative px-6">
-           <div className="text-center max-w-4xl mx-auto">
+        <div className="h-screen w-full flex flex-col justify-center snap-center relative px-6 overflow-hidden">
+           {/* Faded and blurred background image */}
+           <motion.div 
+             className="absolute inset-0 z-[-1] opacity-20"
+             initial={{ scale: 1.1, filter: "blur(20px)" }}
+             animate={{ scale: 1, filter: "blur(8px)" }}
+             transition={{ duration: 3, ease: "easeOut" }}
+           >
+             <img 
+               src={heroBgImg} 
+               alt="Honeycomb background" 
+               className="w-full h-full object-cover object-center mix-blend-multiply"
+             />
+             <div className="absolute inset-0 bg-gradient-to-b from-[#FDFDFB]/50 via-transparent to-[#FDFDFB]"></div>
+           </motion.div>
+
+           <div className="text-center max-w-4xl mx-auto relative z-10">
              <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
