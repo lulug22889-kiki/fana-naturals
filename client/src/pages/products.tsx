@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import honeycombImg from "@assets/pascal-bullan-k909E1ScuWA-unsplash_1771543075444.jpg";
 import toolsImg from "@assets/boris-smokrovic-gr7ZkoZnHXU-unsplash_1771543066987.jpg";
 
@@ -10,6 +12,7 @@ const fadeUp = {
 export default function Products() {
   return (
     <div className="pt-24 min-h-screen">
+      <Header />
       {/* Section A: The Harvest (Bright) */}
       <section className="bg-background py-32 px-6">
         <div className="max-w-7xl mx-auto">
@@ -95,6 +98,7 @@ export default function Products() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

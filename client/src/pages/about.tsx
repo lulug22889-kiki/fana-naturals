@@ -1,4 +1,6 @@
 import { motion, Variants } from "framer-motion";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import teamImg from "@assets/bigstock-Team-of-confident-male-and-fem-52387363_1771550599387.jpg";
 import childImg from "@assets/16450795331_593481280a_z_1771550614886.jpg";
 
@@ -20,6 +22,7 @@ const staggerContainer: Variants = {
 export default function About() {
   return (
     <div className="pt-24 min-h-screen bg-background">
+      <Header />
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full flex items-center justify-center overflow-hidden">
         <motion.div 
@@ -108,6 +111,7 @@ export default function About() {
           </motion.div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

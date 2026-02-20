@@ -1,6 +1,8 @@
 import { useEffect } from "react";
-import { Search, User, ShoppingBag, Heart, Droplets, Lightbulb, Zap, Instagram, Linkedin } from "lucide-react";
+import { Heart, Droplets, Lightbulb, Zap } from "lucide-react";
 import { motion, Variants } from "framer-motion";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 // Assets
 import beekeeperImg from "@assets/Screenshot_2026-02-18_at_10.54.50_AM_1771543079883.png";
@@ -59,60 +61,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#F7F6F2] flex flex-col relative overflow-hidden text-foreground">
       {/* Liquid Scroll effect using smooth CSS scroll behavior on html but we simulate it via normal scrolling with generous paddings and slow transitions */}
 
-      {/* Header (The Minimalist) */}
-      <header className="fixed top-0 w-full z-40 bg-[#F7F6F2]/80 backdrop-blur-xl border-b border-foreground/5 py-6 px-8 md:px-16 transition-all duration-300">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex-1 md:hidden">
-            <div className="w-6 h-px bg-foreground mb-1.5"></div>
-            <div className="w-4 h-px bg-foreground"></div>
-          </div>
-
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5 }}
-            className="flex-1 text-center md:text-left"
-          >
-            <a href="/" className="inline-block">
-              <img 
-                src={logoImg} 
-                alt="Fana Naturals" 
-                className="h-12 md:h-16 w-auto object-contain"
-              />
-            </a>
-          </motion.div>
-
-          <nav className="hidden md:flex flex-1 justify-center space-x-12">
-            {[
-              { name: 'Harvest', href: '/products' },
-              { name: 'Tools', href: '/products' },
-              { name: 'About', href: '/about' }
-            ].map((item) => (
-              <a 
-                key={item.name} 
-                href={item.href}
-                className="text-xs uppercase tracking-[0.15em] text-foreground/70 hover:text-foreground transition-colors duration-300 relative group font-sans"
-              >
-                {item.name}
-                <span className="absolute -bottom-2 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex-1 flex justify-end space-x-6 items-center">
-            <button className="text-foreground/70 hover:text-foreground transition-colors" data-testid="button-search">
-              <Search strokeWidth={1} className="w-5 h-5" />
-            </button>
-            <button className="hidden md:block text-foreground/70 hover:text-foreground transition-colors" data-testid="button-account">
-              <User strokeWidth={1} className="w-5 h-5" />
-            </button>
-            <button className="text-foreground/70 hover:text-foreground transition-colors relative" data-testid="button-cart">
-              <ShoppingBag strokeWidth={1} className="w-5 h-5" />
-              <span className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-accent rounded-full"></span>
-            </button>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section (The Sun-Drenched Meadow) - KEPT EXACTLY AS IS */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
@@ -397,39 +346,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Quiet Exit (Unified Footer) */}
-      <footer className="pt-12 pb-24 px-6 md:px-12 bg-[#F7F6F2]">
-        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
-          
-          <div>
-            <h2 className="font-serif text-3xl tracking-[0.1em] uppercase mb-4">Fana Naturals</h2>
-            <p className="font-serif text-xl text-accent italic mb-8">Honest work. Pure origin.</p>
-            
-            <div className="space-y-1 font-sans text-sm text-foreground/60 tracking-[0.05em] font-light">
-              <p>Langley, British Columbia.</p>
-              <p>Serving the global hive.</p>
-            </div>
-          </div>
-          
-          <div className="flex flex-col items-start md:items-end">
-            <div className="flex space-x-6 mb-12">
-              <a href="#" className="text-foreground/50 hover:text-accent transition-colors duration-300">
-                <Instagram strokeWidth={1} className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-foreground/50 hover:text-accent transition-colors duration-300">
-                <Linkedin strokeWidth={1} className="w-5 h-5" />
-              </a>
-            </div>
-            
-            <div className="flex space-x-6 font-sans text-xs text-foreground/40 tracking-[0.1em] uppercase">
-              <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-              <a href="#" className="hover:text-foreground transition-colors">Terms</a>
-              <span>© {new Date().getFullYear()}</span>
-            </div>
-          </div>
-          
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
