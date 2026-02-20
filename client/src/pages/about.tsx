@@ -111,6 +111,79 @@ export default function About() {
           </motion.div>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <section className="py-24 md:py-32 px-6 bg-[#F7F6F2]">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              Get in Touch
+            </h2>
+            <div className="w-12 h-px bg-accent mx-auto mb-8"></div>
+            <p className="font-sans text-foreground/70 mb-4">
+              We welcome inquiries from global partners, beekeepers, and nature enthusiasts.
+            </p>
+            <a href="mailto:info@fananaturals.com" className="font-serif text-2xl hover:text-accent transition-colors">
+              info@fananaturals.com
+            </a>
+          </motion.div>
+
+          <motion.form
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-8"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-sm uppercase tracking-wider text-foreground/60 font-sans">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-accent transition-colors font-sans"
+                  data-testid="input-name"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm uppercase tracking-wider text-foreground/60 font-sans">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-accent transition-colors font-sans"
+                  data-testid="input-email"
+                />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="message" className="text-sm uppercase tracking-wider text-foreground/60 font-sans">Message</label>
+              <textarea 
+                id="message" 
+                rows={4}
+                className="w-full bg-transparent border-b border-foreground/20 py-3 focus:outline-none focus:border-accent transition-colors font-sans resize-none"
+                data-testid="input-message"
+              ></textarea>
+            </div>
+            <div className="text-center pt-8">
+              <button 
+                type="submit" 
+                className="px-12 py-4 bg-foreground text-background uppercase tracking-[0.2em] text-sm hover:bg-accent transition-all duration-500 font-sans"
+                data-testid="button-submit-contact"
+              >
+                Send Message
+              </button>
+            </div>
+          </motion.form>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
