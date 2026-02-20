@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import beesImg from "@assets/AdobeStock_52143687_1771616359713.jpeg";
 
 const associations = [
   {
@@ -83,20 +84,35 @@ export default function Industry() {
       <Header />
       
       <main className="pt-40 pb-32 px-6 md:px-16 max-w-7xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-24 md:w-2/3"
-        >
-          <span className="font-sans text-xs tracking-[0.2em] uppercase text-accent mb-6 block">Directory</span>
-          <h1 className="font-serif text-5xl md:text-7xl font-light tracking-tight leading-tight mb-8">
-            Industry Resources
-          </h1>
-          <p className="font-sans text-lg font-light leading-relaxed text-foreground/70 max-w-xl">
-            A curated index of the leading councils, boards, and scientific bodies driving the global apiculture standard.
-          </p>
-        </motion.div>
+        <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-24">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="md:w-1/2"
+          >
+            <span className="font-sans text-xs tracking-[0.2em] uppercase text-accent mb-6 block">Directory</span>
+            <h1 className="font-serif text-5xl md:text-7xl font-light tracking-tight leading-tight mb-8">
+              Industry Resources
+            </h1>
+            <p className="font-sans text-lg font-light leading-relaxed text-foreground/70 max-w-md">
+              A curated index of the leading councils, boards, and scientific bodies driving the global apiculture standard.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            className="w-full md:w-1/2 aspect-[4/3] overflow-hidden rounded-sm"
+          >
+            <img 
+              src={beesImg} 
+              alt="Queen Bee and colony" 
+              className="w-full h-full object-cover grayscale opacity-90 sepia-[0.2] contrast-[1.1] transition-all duration-[2s] hover:grayscale-0 hover:opacity-100 hover:scale-105"
+            />
+          </motion.div>
+        </div>
 
         <motion.div 
           variants={containerVariants}
