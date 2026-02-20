@@ -22,7 +22,7 @@ const equipmentList = [
     title: "Commercial Extractors",
     desc: "High-yield centrifugal systems built with surgical-grade stainless steel for maximum efficiency and pure extraction.",
     image: extractorImg,
-    imageClassName: "object-cover"
+    imageClassName: "object-cover sepia-[0.15] contrast-[1.05]"
   },
   {
     title: "Essential Hive Tools",
@@ -34,7 +34,7 @@ const equipmentList = [
     title: "Protective Gear",
     desc: "Ventilated, multi-layer apiary suits offering complete sting protection without compromising mobility.",
     image: gearImg,
-    imageClassName: "object-cover"
+    imageClassName: "object-cover sepia-[0.15] contrast-[1.05]"
   },
   {
     title: "Hive Architecture",
