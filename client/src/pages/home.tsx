@@ -185,20 +185,43 @@ export default function Home() {
 
       {/* Transition: Our Core */}
       <section className="py-24 bg-[#F7F6F2]">
-        <div className="max-w-[1400px] mx-auto px-6">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={viscousStagger}
+            className="text-center mb-20"
+          >
+            <motion.h2 variants={viscousFade} className="font-serif text-3xl md:text-4xl text-[#2D2D2D] mb-6 tracking-wide">
+              Our Core
+            </motion.h2>
+            <motion.div variants={viscousFade} className="w-12 h-[1px] bg-[#D4A017] mx-auto opacity-70"></motion.div>
+          </motion.div>
+
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={fastStagger}
-            className="flex justify-center w-full"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
           >
-            <motion.img 
-              variants={viscousFade}
-              src={coreImg} 
-              alt="Our Core Values" 
-              className="w-full max-w-5xl object-contain opacity-90 mix-blend-multiply"
-            />
+            {[
+              { title: "Love of Honeybees", icon: Heart, desc: "A deep reverence for the swarm\nand their delicate ecosystem." },
+              { title: "Passion for Beekeeping", icon: Droplets, desc: "Thirty years of hands-on\ndedication to the apicultural arts." },
+              { title: "Entrepreneurial Spirit", icon: Lightbulb, desc: "Pioneering sustainable models\nfor modern beekeepers." },
+              { title: "Innovation", icon: Zap, desc: "Elevating traditional methods\nthrough thoughtful design." }
+            ].map((value, idx) => (
+              <motion.div key={idx} variants={viscousFade} className="flex flex-col items-center text-center group">
+                <div className="w-[72px] h-[72px] rounded-full border border-[#2D2D2D]/10 flex items-center justify-center mb-8 group-hover:border-[#D4A017] transition-colors duration-700">
+                  <value.icon strokeWidth={1} className="w-6 h-6 text-[#2D2D2D]/60 group-hover:text-[#D4A017] transition-colors duration-700" />
+                </div>
+                <h3 className="font-serif text-lg md:text-xl text-[#2D2D2D]/90 mb-4 tracking-wide">{value.title}</h3>
+                <p className="font-sans text-xs md:text-sm text-[#2D2D2D]/50 leading-[1.8] tracking-[0.05em] font-light whitespace-pre-line">
+                  {value.desc}
+                </p>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
