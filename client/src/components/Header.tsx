@@ -28,7 +28,7 @@ export default function Header() {
 
         <nav className="hidden md:flex flex-1 justify-center space-x-12">
           {[
-            { name: 'Harvest', href: '/products' },
+            { name: 'Harvest', href: '/harvest' },
             { name: 'Tools', href: '/products' },
             { name: 'About', href: '/about' }
           ].map((item) => (

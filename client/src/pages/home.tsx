@@ -98,7 +98,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 1 }}
           >
             <a 
-              href="/products"
+              href="/harvest"
               className="inline-block px-10 py-4 border border-white/40 text-white uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-primary transition-all duration-500 backdrop-blur-sm bg-white/5"
               data-testid="link-explore"
             >

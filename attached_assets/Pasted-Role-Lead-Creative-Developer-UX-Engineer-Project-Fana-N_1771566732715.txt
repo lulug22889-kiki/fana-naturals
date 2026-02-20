@@ -1,0 +1,62 @@
+Role: Lead Creative Developer & UX Engineer.
+Project: Fana Naturals "The Harvest" Immersive Product Gallery.
+Aesthetic Reference: Hugo & Marie (Editorial Stillness) + Immersive Garden (Rhythmic Flow).
+
+1. Core Layout & Interaction (The Rhythmic Scroll):
+
+Scroll Behavior: Implement a CSS Scroll Snapping or a smooth Observer-based Snap effect. Each product chapter must snap into the center of the viewport, creating a "Focus Gallery" experience.
+
+Dynamic Background: Implement a subtle background-color transition. As the user scrolls, the color should fluidly shift from Ivory White (#FDFDFB) to Warm Honey Gold (#F2E1B6) and back, reflecting the product's essence.
+
+Typography: - "The Essence": Light, wide-spaced Sans-Serif (Inter), uppercase, letter-spacing: 0.2em.
+
+"The Story": High-contrast, elegant Serif (Cormorant Garamond), leading: 1.6, italicized headers where appropriate.
+
+2. Product Narrative Chapters (The Vertical Narrative):
+Create 6 distinct full-height sections with the following content and visual cues:
+
+[Raw Honey | The Liquid Sun]
+
+Visual: Macro, vertical video or high-res image of thick honey folding.
+
+Copy: The Essence: Unfiltered. Uncompromised. | The Story: Sourced from True Source Certified apiaries, our No. 1 Grade Canadian White Honey is the gold standard of purity.
+
+[Bee Pollen | Nature’s Multivitamin]
+
+Visual: High-contrast shot of vibrant, multi-colored pollen falling like golden sand.
+
+Copy: The Essence: Concentrated Vitality. | The Story: A bioavailable powerhouse of B vitamins and minerals to fuel a modern, rhythmic life.
+
+[Royal Jelly | The Sovereign Elixir]
+
+Visual: Artistic shot of pearlescent jelly inside a hexagonal cell.
+
+Copy: The Essence: Cognitive Clarity. | The Story: Rich in rare 10-HDA, our Royal Jelly is curated for mental sharpness and longevity.
+
+[Propolis | The Resin Guard]
+
+Visual: Textured amber resin against a bone-white background.
+
+Copy: The Essence: Biological Defense. | The Story: Containing over 300 beneficial compounds, this is nature’s answer to immune support.
+
+[Lyophilized Powders | The Future of the Hive]
+
+Visual: Ethereal clouds of fine powder caught in mid-air.
+
+Copy: The Essence: Preserved Potency. | The Story: Advanced freeze-drying locks in 100% of biological benefits, bridging 35 years of tradition with modern wellness.
+
+[Beeswax | The Architectural Foundation]
+
+Visual: Vertical stack of raw, geometric wax blocks with a matte yellow glow.
+
+Copy: The Essence: Pure Structure. | The Story: Triple-filtered and chemical-free, representing the foundational strength of our 35-year harvest.
+
+3. Technical Implementation Details:
+
+Animations: Use Framer Motion for staggered text entry (500ms delay). Image assets should have a subtle "parallax" or "slow-zoom" effect as they enter the view.
+
+Micro-interactions: Add a custom "Magnetic Cursor" that reacts when hovering over the product titles.
+
+Responsiveness: Ensure the vertical narrative maintains its "Editorial Magazine" feel on mobile, with adjusted padding and font scales.
+
+Execution: Build this page as a new route /harvest. Ensure the "Liquid Flow" between chapters is seamless and mimics the viscosity of honey.
