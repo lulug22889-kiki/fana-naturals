@@ -1,15 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { Heart, Droplets, Lightbulb, Zap } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-// Assets
-import honeyImg from "@assets/pascal-bullan-k909E1ScuWA-unsplash_1771567323260.jpg";
-import pollenImg from "@assets/ChatGPT_Image_Feb_19,_2026,_10_01_29_PM_1771567365941.png";
-import royalJellyImg from "@assets/ChatGPT_Image_Feb_19,_2026,_10_00_05_PM_1771567347744.png";
-import propolisImg from "@assets/ChatGPT_Image_Feb_19,_2026,_09_57_59_PM_1771567344369.png";
-import powderImg from "@assets/lyophilized-powders.png";
-import beeswaxImg from "@assets/ChatGPT_Image_Feb_19,_2026,_09_58_50_PM_1771567369134.png";
 
 const chapters = [
   {
@@ -18,7 +11,7 @@ const chapters = [
     subtitle: "The Liquid Sun",
     essence: "Unfiltered. Uncompromised.",
     story: "Sourced from True Source Certified apiaries, our No. 1 Grade Canadian White Honey is the gold standard of purity.",
-    image: honeyImg,
+    image: "https://images.unsplash.com/photo-1589733901241-5d5d9b688c8a?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: "bee-pollen",
@@ -26,7 +19,7 @@ const chapters = [
     subtitle: "Nature’s Multivitamin",
     essence: "Concentrated Vitality.",
     story: "A bioavailable powerhouse of B vitamins and minerals to fuel a modern, rhythmic life.",
-    image: pollenImg,
+    image: "https://images.unsplash.com/photo-1596715112501-c58066f77340?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: "royal-jelly",
@@ -34,7 +27,7 @@ const chapters = [
     subtitle: "The Sovereign Elixir",
     essence: "Cognitive Clarity.",
     story: "Rich in rare 10-HDA, our Royal Jelly is curated for mental sharpness and longevity.",
-    image: royalJellyImg,
+    image: "https://images.unsplash.com/photo-1589733901241-5d5d9b688c8a?q=80&w=2000&auto=format&fit=crop",
   },
   {
     id: "propolis",
@@ -42,7 +35,7 @@ const chapters = [
     subtitle: "The Resin Guard",
     essence: "Biological Defense.",
     story: "Containing over 300 beneficial compounds, this is nature’s answer to immune support.",
-    image: propolisImg,
+    image: "https://images.unsplash.com/photo-1473256599800-b48c7c88cd7e?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: "lyophilized-powders",
@@ -50,7 +43,7 @@ const chapters = [
     subtitle: "The Future of the Hive",
     essence: "Preserved Potency.",
     story: "Advanced freeze-drying locks in 100% of biological benefits, bridging 35 years of tradition with modern wellness.",
-    image: powderImg,
+    image: "https://images.unsplash.com/photo-1615486171448-4fd6779ee8eb?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: "beeswax",
@@ -58,7 +51,7 @@ const chapters = [
     subtitle: "The Architectural Foundation",
     essence: "Pure Structure.",
     story: "Triple-filtered and chemical-free, representing the foundational strength of our 35-year harvest.",
-    image: beeswaxImg,
+    image: "https://images.unsplash.com/photo-1613915647502-390d40fa2c44?auto=format&fit=crop&w=1200&q=80",
   }
 ];
 
@@ -154,6 +147,66 @@ export default function Harvest() {
            </motion.div>
         </div>
 
+        {/* Transition: Our Core */}
+        <section className="h-screen w-full flex items-center justify-center snap-center relative px-6">
+          <div className="max-w-[1200px] w-full mx-auto">
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.2 } }
+              }}
+              className="text-center mb-20"
+            >
+              <motion.h2 
+                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 1 } } }} 
+                className="font-serif text-4xl md:text-5xl text-foreground mb-6 tracking-wide"
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                Our Core
+              </motion.h2>
+              <motion.div 
+                variants={{ hidden: { opacity: 0, scaleX: 0 }, visible: { opacity: 1, scaleX: 1, transition: { duration: 1 } } }} 
+                className="w-12 h-[1px] bg-[#D4A017] mx-auto opacity-70"
+              />
+            </motion.div>
+
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+              }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
+            >
+              {[
+                { title: "Love of Honeybees", icon: Heart, desc: "A deep reverence for the swarm\nand their delicate ecosystem." },
+                { title: "Passion for Beekeeping", icon: Droplets, desc: "Thirty years of hands-on\ndedication to the apicultural arts." },
+                { title: "Entrepreneurial Spirit", icon: Lightbulb, desc: "Pioneering sustainable models\nfor modern beekeepers." },
+                { title: "Innovation", icon: Zap, desc: "Elevating traditional methods\nthrough thoughtful design." }
+              ].map((value, idx) => (
+                <motion.div 
+                  key={idx} 
+                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 1 } } }} 
+                  className="flex flex-col items-center text-center group"
+                >
+                  <div className="w-[72px] h-[72px] rounded-full border border-foreground/10 flex items-center justify-center mb-8 group-hover:border-[#D4A017] transition-colors duration-700">
+                    <value.icon strokeWidth={1} className="w-6 h-6 text-foreground/60 group-hover:text-[#D4A017] transition-colors duration-700" />
+                  </div>
+                  <h3 className="font-serif text-lg md:text-xl text-foreground/90 mb-4 tracking-wide" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{value.title}</h3>
+                  <p className="font-sans text-xs md:text-sm text-foreground/50 leading-[1.8] tracking-[0.05em] font-light whitespace-pre-line">
+                    {value.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {chapters.map((chapter, index) => (
           <section 
             key={chapter.id} 
@@ -212,10 +265,11 @@ export default function Harvest() {
                     <h2 
                       className="font-serif text-5xl md:text-7xl text-foreground mb-4 leading-none"
                       data-testid={`title-${chapter.id}`}
+                      style={{ fontFamily: "'Cormorant Garamond', serif" }}
                     >
                       {chapter.title}
                     </h2>
-                    <h3 className="font-serif italic text-2xl md:text-3xl text-foreground/70">
+                    <h3 className="font-serif italic text-2xl md:text-3xl text-foreground/70" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                       {chapter.subtitle}
                     </h3>
                   </motion.div>
@@ -225,10 +279,10 @@ export default function Harvest() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-20%" }}
-                    transition={{ duration: 1, delay: 0.4 }}
+                    transition={{ duration: 1, delay: 0.8 }}
                   >
                     <span className="font-sans text-xs uppercase tracking-[0.2em] text-foreground/50 block mb-4">The Story</span>
-                    <p className="font-serif text-xl md:text-2xl text-foreground/90 leading-[1.6]">
+                    <p className="font-serif text-xl md:text-2xl text-foreground/90 leading-[1.6]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                       {chapter.story}
                     </p>
                   </motion.div>

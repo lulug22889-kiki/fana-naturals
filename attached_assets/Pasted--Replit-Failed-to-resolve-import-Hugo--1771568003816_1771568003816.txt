@@ -1,0 +1,59 @@
+看到 Replit 报错（Failed to resolve import）别担心，这是因为代码里引用的图片路径在你的资源文件夹中还不存在。
+
+要一次性完美解决这个报错，并实现你追求的 Hugo & Marie 艺术质感，请把下面这段经过深度优化的指令发给 Replit Agent。这段指令特别强化了“容错机制”，确保即使图片没到位，网站也能优雅运行。
+
+🚀 Replit Agent 专家修正与全站集成指令
+Role: Senior Full-Stack Engineer & Creative Director.
+Project: Fana Naturals "The Harvest" (Final Master Build).
+Goal: Fix the import-analysis errors and complete the immersive gallery with Hugo & Marie's editorial stillness.
+
+1. Critical Fix: Image Asset Fallback
+
+Issue: The app is crashing because @assets/lyophilized-powders.png and other files are missing.
+
+Solution: In harvest.tsx, replace direct file imports with Dynamic Placeholders (Unsplash APIs) if the local file is not found.
+
+Action: For "The Harvest" sections, use high-quality Unsplash URLs that match my visual direction:
+
+Honey: https://images.unsplash.com/photo-1589733901241-5d5d9b688c8a
+
+Pollen: https://images.unsplash.com/photo-1596715112501-c58066f77340
+
+Royal Jelly: https://images.unsplash.com/photo-1589733901241-5d5d9b688c8a?q=80&w=2000 (Macro focus).
+
+Beeswax: Use geometric wax blocks imagery.
+
+2. Section Build: "The Harvest" Vertical Narrative
+Build the 6 chapters exactly as follows, ensuring the background color fluidly shifts between them:
+
+01. Raw Honey | The Liquid Sun: Essence: Unfiltered. Uncompromised. Story: No. 1 Grade Canadian White Honey, True Source Certified.
+
+02. Bee Pollen | Nature’s Multivitamin: Essence: Concentrated Vitality. Story: A bioavailable powerhouse of vitamins and amino acids.
+
+03. Royal Jelly | The Sovereign Elixir: Essence: Cognitive Clarity. Story: Rich in 10-HDA for mental sharpness and longevity.
+
+04. Propolis | The Resin Guard: Essence: Biological Defense. Story: Nature’s answer to immune support with 300+ beneficial compounds.
+
+05. Lyophilized Powders: Essence: Preserved Potency. Story: Advanced freeze-drying locks in active biological benefits.
+
+06. Beeswax: Essence: Pure Structure. Story: Triple-filtered, chemical-free foundation of our 35-year harvest.
+
+3. Design Directives (The "Quiet Luxury" Look):
+
+Typography: Headlines in Cormorant Garamond (High-contrast Serif). Sub-headers in Inter (Wide-spaced Sans-serif).
+
+Interactions:
+
+Scroll Snapping: Ensure each chapter snaps perfectly to the center.
+
+Viscous Fade-in: Apply a 500ms staggered delay to "The Story" text.
+
+Background Shift: Smoothly transition from #FDFDFB (Ivory) to #F2E1B6 (Honey Gold) as the user scrolls.
+
+4. Site Structure Integration:
+
+Connect the Header (keep current style) to these sections.
+
+Add the "Our Core" section (Love of Honeybees, Passion, Entrepreneurial Spirit, Innovation) as a transition between Origin and Harvest.
+
+Execution: Fix the imports FIRST to clear the error, then build the sections. Use clean React components and Framer Motion for all transitions.
