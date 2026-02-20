@@ -88,8 +88,8 @@ export default function Home() {
             className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-8 leading-tight drop-shadow-md"
             style={{ textShadow: '0 4px 20px rgba(0,0,0,0.1)' }}
           >
-            Captured Sunlight,<br />
-            <span className="italic opacity-90">Bottled Time.</span>
+            The Art of Apiculture,<br />
+            <span className="italic opacity-90">Pure Origin & Precision Design.</span>
           </motion.h1>
           
           <motion.div
