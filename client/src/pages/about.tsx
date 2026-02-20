@@ -140,7 +140,17 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => {
+              e.preventDefault();
+              const name = (document.getElementById('name') as HTMLInputElement).value;
+              const email = (document.getElementById('email') as HTMLInputElement).value;
+              const message = (document.getElementById('message') as HTMLTextAreaElement).value;
+              
+              const subject = encodeURIComponent(`Inquiry from ${name || 'Website Visitor'}`);
+              const body = encodeURIComponent(`${message}\n\n---\nFrom: ${name}\nEmail: ${email}`);
+              
+              window.location.href = `mailto:info@fananaturals.com?subject=${subject}&body=${body}`;
+            }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
