@@ -3,13 +3,15 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Heart, Droplets, Lightbulb, Zap } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import beePollenImg from "@assets/bigstock-Bee-Pollen-24241154_1771568204060.jpg";
-import rawHoneyImg from "@assets/屏幕快照_2016-09-20_17.53.10_1771568379514.png";
-import royalJellyImg from "@assets/royal_jelly_1771568486547.png";
-import heroBgImg from "@assets/pascal-bullan-k909E1ScuWA-unsplash_1771568577485.jpg";
-import propolisImg from "@assets/ChatGPT_Image_Feb_19,_2026,_09_57_59_PM_1771568750106.png";
-import beeswaxImg from "@assets/ChatGPT_Image_Feb_19,_2026,_09_58_50_PM_1771568984729.png";
-import powderImg from "@assets/ChatGPT_Image_Feb_19,_2026,_10_32_58_PM_1771569199376.png";
+import powderImg from "@assets/lyophilized-powders.png";
+
+// Fallbacks for missing assets
+const beePollenImg = "https://images.unsplash.com/photo-1589733901241-5d5d9b688c8a?q=80&w=2000";
+const rawHoneyImg = "https://images.unsplash.com/photo-1558449028-b53a39d100fc?q=80&w=2000";
+const royalJellyImg = "https://images.unsplash.com/photo-1589733901241-5d5d9b688c8a?q=80&w=2000";
+const heroBgImg = "https://images.unsplash.com/photo-1558449028-b53a39d100fc?q=80&w=2000";
+const propolisImg = "https://images.unsplash.com/photo-1589733901241-5d5d9b688c8a?q=80&w=2000";
+const beeswaxImg = "https://images.unsplash.com/photo-1558449028-b53a39d100fc?q=80&w=2000";
 
 const chapters = [
   {
@@ -307,10 +309,10 @@ export default function Harvest() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-20%" }}
-                    transition={{ duration: 1, delay: 0.8 }}
+                    transition={{ duration: 1.5, delay: 0.5 }}
                   >
                     <span className="font-sans text-xs uppercase tracking-[0.2em] text-foreground/50 block mb-4">The Story</span>
-                    <p className="font-serif text-xl md:text-2xl text-foreground/90 leading-[1.6]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                    <p className="font-sans text-lg md:text-xl text-foreground/80 leading-[1.8] font-light" style={{ fontFamily: "'Inter', sans-serif" }}>
                       {chapter.story}
                     </p>
                   </motion.div>

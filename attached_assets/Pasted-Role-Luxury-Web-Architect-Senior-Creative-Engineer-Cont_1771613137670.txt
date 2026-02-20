@@ -1,0 +1,44 @@
+Role: Luxury Web Architect & Senior Creative Engineer.
+Context: The app is currently crashing due to missing asset imports in harvest.tsx and products.tsx. I need to fix these errors immediately and complete the site with high-end editorial aesthetics.
+
+1. Critical Fix: Defensive Asset Management
+
+Scan & Link: Scan the @assets folder for existing files (e.g., boris-smokrovic-..., jonas-hensel-...).
+
+Placeholder Fallback: For any missing product images (like extractor.png, powder.png, smoker.png), DO NOT use local imports that don't exist. Instead, use high-resolution Unsplash professional photography URLs as temporary fallbacks to ensure the app compiles.
+
+Example Fallbacks:
+
+Stainless Steel Tech: https://images.unsplash.com/photo-1558449028-b53a39d100fc?q=80&w=2000
+
+Golden Textures: https://images.unsplash.com/photo-1589733901241-5d5d9b688c8a?q=80&w=2000
+
+2. Immersive Build: "The Harvest" (Sensory Vertical Scroll)
+Implement a scroll-snapping narrative where each product is a "Rare Specimen" in a digital gallery:
+
+Background Ritual: Fluidly transition background from Ivory (#FDFDFB) to Warm Honey (#F2E1B6) as users scroll.
+
+Product Chapters: 1. Raw Honey | The Liquid Sun: Essence: Unfiltered. Uncompromised. (Use jonas-hensel-3Cpws7ibtfo-unsplash.jpg).
+2. Bee Pollen | Nature’s Multivitamin: Essence: Concentrated Vitality.
+3. Royal Jelly | The Sovereign Elixir: Essence: Cognitive Clarity.
+4. Propolis | The Resin Guard: Essence: Biological Defense.
+5. Lyophilized Powders: Essence: Preserved Potency. (35 years of tradition meets sub-zero tech).
+6. Beeswax | Architectural Foundation: Essence: Pure Structure. (Use pascal-bullan-k909E1ScuWA-unsplash.jpg).
+
+3. Professional Build: "The Workshop" (Industrial Dark Mode)
+
+Aesthetic: High-contrast Cinematic Dark theme (#1A1A1A).
+
+Interactive Gallery: 4 Professional Equipment cards (Extractors, Smokers, Protective Gear, Hive Architecture).
+
+Effect: Grayscale images that transition to full color with a 1.05x zoom on hover.
+
+4. Site-Wide Refinement (The Hugo & Marie Touch):
+
+Typography: Cormorant Garamond for all poetic headers; Inter for technical specifications.
+
+Transitions: "Viscous Fade-in" (500ms staggered delay) for all body text.
+
+Footer: Minimalist "Quiet Exit" with the quote: "Honest work. Pure origin."
+
+Execution: Clear the Vite import errors FIRST. Then, transform the entire landing page and routes into a cohesive, immersive 35-year anniversary digital experience.

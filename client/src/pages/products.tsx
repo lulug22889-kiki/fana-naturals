@@ -2,7 +2,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import toolsImg from "@assets/boris-smokrovic-gr7ZkoZnHXU-unsplash_1771543066987.jpg";
+
+// Fallback image for the hero section since boris-smokrovic is missing
+const toolsImg = "https://images.unsplash.com/photo-1589733901241-5d5d9b688c8a?q=80&w=2000";
 
 import extractorImg from "@assets/extractor.png";
 import smokerImg from "@assets/smoker.png";
