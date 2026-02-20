@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import toolsImg from "@assets/boris-smokrovic-gr7ZkoZnHXU-unsplash_1771543066987.jpg";
 import hiveImg from "@assets/ChatGPT_Image_Feb_20,_2026,_10_49_48_AM_1771613404291.png";
+import smokerImg from "@assets/ChatGPT_Image_Feb_20,_2026,_11_00_54_AM_1771614068085.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -23,7 +24,8 @@ const equipmentList = [
   {
     title: "Precision Smokers",
     desc: "Durable, heat-shielded bellows designed for consistent, cool smoke to keep the colony calm and safe.",
-    image: "https://images.unsplash.com/photo-1587049352841-8d4e8979c5c7?auto=format&fit=crop&w=800&q=80"
+    image: smokerImg,
+    imageClassName: "mix-blend-multiply object-contain p-8"
   },
   {
     title: "Protective Gear",
