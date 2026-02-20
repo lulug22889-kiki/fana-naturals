@@ -76,7 +76,7 @@ export default function Home() {
               <img 
                 src={logoImg} 
                 alt="Fana Naturals" 
-                className="h-10 md:h-12 w-auto object-contain"
+                className="h-12 md:h-16 w-auto object-contain"
               />
             </a>
           </motion.div>
