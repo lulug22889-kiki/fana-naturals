@@ -132,7 +132,7 @@ export default function Home() {
             className="lg:col-span-7"
           >
             <motion.p variants={viscousFade} className="font-sans text-lg md:text-2xl text-foreground/80 leading-relaxed tracking-[0.05em] font-light">
-              "We are beekeepers first. For over thirty-five years, our pulse has followed the rhythm of the Canadian prairies. Fana Naturals exists at the intersection of heritage and stewardship. We manage the entire journey—from the untouched source to the processing facility—ensuring that the welfare of the bee is protected and the story of the land remains pure in every drop."
+              "We are beekeepers and innovators. For over thirty-five years, Fana Naturals has stood at the forefront of the apicultural industry. We specialize in premium hive products—from pure Canadian honey and potent bee pollen to advanced freeze-dried royal jelly and drone powders. Beyond the harvest, we equip the modern commercial apiary with precision tools and industrial-grade extraction machinery, ensuring that the legacy of beekeeping scales with absolute purity."
             </motion.p>
           </motion.div>
         </div>
