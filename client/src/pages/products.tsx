@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import toolsImg from "@assets/boris-smokrovic-gr7ZkoZnHXU-unsplash_1771543066987.jpg";
 import hiveImg from "@assets/ChatGPT_Image_Feb_20,_2026,_10_49_48_AM_1771613404291.png";
 import smokerImg from "@assets/ChatGPT_Image_Feb_20,_2026,_11_00_54_AM_1771614068085.png";
-import extractorImg from "@assets/linijasushki2021(sajt)-800x600_1771615617854.jpg";
+import extractorImg from "@assets/4c1fce94-4551-4014-b71b-dcca7873943f_1771615691603.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -21,7 +21,7 @@ const equipmentList = [
     title: "Commercial Extractors",
     desc: "High-yield centrifugal systems built with surgical-grade stainless steel for maximum efficiency and pure extraction.",
     image: extractorImg,
-    imageClassName: "mix-blend-multiply object-cover contrast-[1.1] sepia-[0.1]"
+    imageClassName: "object-cover"
   },
   {
     title: "Precision Smokers",
