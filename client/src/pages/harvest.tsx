@@ -21,6 +21,7 @@ const chapters = [
     essence: "Concentrated Vitality.",
     story: "A bioavailable powerhouse of B vitamins and minerals to fuel a modern, rhythmic life.",
     image: beePollenImg,
+    imageClassName: "mix-blend-multiply contrast-110 brightness-95 sepia-[.2]",
   },
   {
     id: "royal-jelly",
@@ -227,7 +228,7 @@ export default function Harvest() {
                   <motion.img 
                     src={chapter.image} 
                     alt={chapter.title}
-                    className="w-full h-full object-cover object-center"
+                    className={`w-full h-full object-cover object-center ${chapter.imageClassName || ''}`}
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 2, ease: "easeOut" }}
                   />
