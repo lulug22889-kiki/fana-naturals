@@ -5,6 +5,7 @@ import toolsImg from "@assets/boris-smokrovic-gr7ZkoZnHXU-unsplash_1771543066987
 import hiveImg from "@assets/ChatGPT_Image_Feb_20,_2026,_10_49_48_AM_1771613404291.png";
 import smokerImg from "@assets/ChatGPT_Image_Feb_20,_2026,_11_00_54_AM_1771614068085.png";
 import extractorImg from "@assets/4c1fce94-4551-4014-b71b-dcca7873943f_1771615691603.png";
+import gearImg from "@assets/ChatGPT_Image_Feb_20,_2026,_11_32_12_AM_1771615951722.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -32,7 +33,8 @@ const equipmentList = [
   {
     title: "Protective Gear",
     desc: "Ventilated, multi-layer apiary suits offering complete sting protection without compromising mobility.",
-    image: "https://images.unsplash.com/photo-1622396131435-081cb70407a1?auto=format&fit=crop&w=800&q=80"
+    image: gearImg,
+    imageClassName: "object-cover sepia-[0.15] contrast-[1.05]"
   },
   {
     title: "Hive Architecture",
