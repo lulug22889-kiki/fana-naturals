@@ -175,66 +175,6 @@ export default function Harvest() {
            </motion.div>
         </div>
 
-        {/* Transition: Our Core */}
-        <section className="h-screen w-full flex items-center justify-center snap-center relative px-6">
-          <div className="max-w-[1200px] w-full mx-auto">
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.2 } }
-              }}
-              className="text-center mb-20"
-            >
-              <motion.h2 
-                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 1 } } }} 
-                className="font-serif text-4xl md:text-5xl text-foreground mb-6 tracking-wide"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
-              >
-                Our Core
-              </motion.h2>
-              <motion.div 
-                variants={{ hidden: { opacity: 0, scaleX: 0 }, visible: { opacity: 1, scaleX: 1, transition: { duration: 1 } } }} 
-                className="w-12 h-[1px] bg-[#D4A017] mx-auto opacity-70"
-              />
-            </motion.div>
-
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
-              }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
-            >
-              {[
-                { title: "Love of Honeybees", icon: Heart, desc: "A deep reverence for the swarm\nand their delicate ecosystem." },
-                { title: "Passion for Beekeeping", icon: Droplets, desc: "Thirty years of hands-on\ndedication to the apicultural arts." },
-                { title: "Entrepreneurial Spirit", icon: Lightbulb, desc: "Pioneering sustainable models\nfor modern beekeepers." },
-                { title: "Innovation", icon: Zap, desc: "Elevating traditional methods\nthrough thoughtful design." }
-              ].map((value, idx) => (
-                <motion.div 
-                  key={idx} 
-                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 1 } } }} 
-                  className="flex flex-col items-center text-center group"
-                >
-                  <div className="w-[72px] h-[72px] rounded-full border border-foreground/10 flex items-center justify-center mb-8 group-hover:border-[#D4A017] transition-colors duration-700">
-                    <value.icon strokeWidth={1} className="w-6 h-6 text-foreground/60 group-hover:text-[#D4A017] transition-colors duration-700" />
-                  </div>
-                  <h3 className="font-serif text-lg md:text-xl text-foreground/90 mb-4 tracking-wide" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{value.title}</h3>
-                  <p className="font-sans text-xs md:text-sm text-foreground/50 leading-[1.8] tracking-[0.05em] font-light whitespace-pre-line">
-                    {value.desc}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
         {chapters.map((chapter, index) => (
           <section 
             key={chapter.id} 
@@ -320,6 +260,66 @@ export default function Harvest() {
             </div>
           </section>
         ))}
+
+        {/* Transition: Our Core */}
+        <section className="h-screen w-full flex items-center justify-center snap-center relative px-6">
+          <div className="max-w-[1200px] w-full mx-auto">
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.2 } }
+              }}
+              className="text-center mb-20"
+            >
+              <motion.h2 
+                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 1 } } }} 
+                className="font-serif text-4xl md:text-5xl text-foreground mb-6 tracking-wide"
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                Our Core
+              </motion.h2>
+              <motion.div 
+                variants={{ hidden: { opacity: 0, scaleX: 0 }, visible: { opacity: 1, scaleX: 1, transition: { duration: 1 } } }} 
+                className="w-12 h-[1px] bg-[#D4A017] mx-auto opacity-70"
+              />
+            </motion.div>
+
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+              }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
+            >
+              {[
+                { title: "Love of Honeybees", icon: Heart, desc: "A deep reverence for the swarm\nand their delicate ecosystem." },
+                { title: "Passion for Beekeeping", icon: Droplets, desc: "Thirty years of hands-on\ndedication to the apicultural arts." },
+                { title: "Entrepreneurial Spirit", icon: Lightbulb, desc: "Pioneering sustainable models\nfor modern beekeepers." },
+                { title: "Innovation", icon: Zap, desc: "Elevating traditional methods\nthrough thoughtful design." }
+              ].map((value, idx) => (
+                <motion.div 
+                  key={idx} 
+                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 1 } } }} 
+                  className="flex flex-col items-center text-center group"
+                >
+                  <div className="w-[72px] h-[72px] rounded-full border border-foreground/10 flex items-center justify-center mb-8 group-hover:border-[#D4A017] transition-colors duration-700">
+                    <value.icon strokeWidth={1} className="w-6 h-6 text-foreground/60 group-hover:text-[#D4A017] transition-colors duration-700" />
+                  </div>
+                  <h3 className="font-serif text-lg md:text-xl text-foreground/90 mb-4 tracking-wide" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{value.title}</h3>
+                  <p className="font-sans text-xs md:text-sm text-foreground/50 leading-[1.8] tracking-[0.05em] font-light whitespace-pre-line">
+                    {value.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
 
         {/* Footer */}
         <div className="snap-start w-full">
