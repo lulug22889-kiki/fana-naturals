@@ -49,13 +49,13 @@ const chapters = [
     imageClassName: "mix-blend-multiply contrast-[1.05] brightness-[0.98] saturate-[1.15]",
   },
   {
-    id: "lyophilized-powders",
-    title: "Lyophilized Powders",
+    id: "freeze-dried-powders",
+    title: "Freeze-Dried Powders",
     subtitle: "The Future of the Hive",
     essence: "Preserved Potency.",
     story: "Advanced freeze-drying locks in 100% of biological benefits, bridging 35 years of tradition with modern wellness.",
     image: powderImg,
-    imageClassName: "mix-blend-multiply contrast-[1.05] brightness-[0.98] saturate-[1.15]",
+    imageClassName: "mix-blend-multiply contrast-[1.02] brightness-[1.0] saturate-[1.05]",
   },
   {
     id: "beeswax",
