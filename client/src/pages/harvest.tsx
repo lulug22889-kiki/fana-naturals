@@ -53,7 +53,7 @@ const chapters = [
     title: "Freeze-Dried Powders",
     subtitle: "The Future of the Hive",
     essence: "Preserved Potency.",
-    story: "Advanced freeze-drying locks in 100% of biological benefits, bridging 35 years of tradition with modern wellness.",
+    story: "An exclusive collection of freeze-dried royal jelly, queen larva, pure honey, and drone powders. Advanced lyophilization preserves absolute biological integrity, delivering the highest quality therapeutic benefits to our discerning customers.",
     image: powderImg,
     imageClassName: "mix-blend-multiply contrast-[1.02] brightness-[1.0] saturate-[1.05]",
   },
