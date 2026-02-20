@@ -34,7 +34,7 @@ const equipmentList = [
     title: "Hive Architecture",
     desc: "Precision-milled Langstroth boxes and frames, kiln-dried for longevity against the elements.",
     image: hiveImg,
-    imageClassName: "mix-blend-multiply"
+    imageClassName: "mix-blend-multiply object-contain p-12"
   }
 ];
 
@@ -116,11 +116,11 @@ export default function Products() {
           >
             {equipmentList.map((item, idx) => (
               <motion.div key={idx} variants={fadeUp} className="group cursor-pointer">
-                <div className="aspect-[4/3] overflow-hidden mb-8 bg-[#E5DFD3] rounded-sm">
+                <div className="aspect-[4/3] overflow-hidden mb-8 bg-[#E5DFD3] rounded-sm flex items-center justify-center">
                   <img 
                     src={item.image} 
                     alt={item.title} 
-                    className={`w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 ${item.imageClassName || 'mix-blend-luminosity group-hover:mix-blend-normal'}`}
+                    className={`w-full h-full transition-transform duration-[2s] group-hover:scale-105 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 ${item.imageClassName || 'object-cover mix-blend-luminosity group-hover:mix-blend-normal'}`}
                   />
                 </div>
                 <div className="flex items-start gap-6">
