@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Heart, Droplets, Lightbulb, Zap } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import beePollenImg from "@assets/bigstock-Bee-Pollen-24241154_1771568204060.jpg";
 
 const chapters = [
   {
@@ -19,7 +20,7 @@ const chapters = [
     subtitle: "Nature’s Multivitamin",
     essence: "Concentrated Vitality.",
     story: "A bioavailable powerhouse of B vitamins and minerals to fuel a modern, rhythmic life.",
-    image: "https://images.unsplash.com/photo-1596715112501-c58066f77340?auto=format&fit=crop&w=1200&q=80",
+    image: beePollenImg,
   },
   {
     id: "royal-jelly",
