@@ -9,6 +9,7 @@ import royalJellyImg from "@assets/royal_jelly_1771568486547.png";
 import heroBgImg from "@assets/pascal-bullan-k909E1ScuWA-unsplash_1771568577485.jpg";
 import propolisImg from "@assets/ChatGPT_Image_Feb_19,_2026,_09_57_59_PM_1771568750106.png";
 import beeswaxImg from "@assets/ChatGPT_Image_Feb_19,_2026,_09_58_50_PM_1771568984729.png";
+import powderImg from "@assets/ChatGPT_Image_Feb_19,_2026,_10_32_58_PM_1771569199376.png";
 
 const chapters = [
   {
@@ -53,7 +54,8 @@ const chapters = [
     subtitle: "The Future of the Hive",
     essence: "Preserved Potency.",
     story: "Advanced freeze-drying locks in 100% of biological benefits, bridging 35 years of tradition with modern wellness.",
-    image: "https://images.unsplash.com/photo-1615486171448-4fd6779ee8eb?auto=format&fit=crop&w=1200&q=80",
+    image: powderImg,
+    imageClassName: "mix-blend-multiply contrast-[1.05] brightness-[0.98] sepia-[0.1] saturate-[0.9]",
   },
   {
     id: "beeswax",
