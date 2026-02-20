@@ -126,7 +126,7 @@ export default function Products() {
                   <img 
                     src={item.image} 
                     alt={item.title} 
-                    className={`w-full h-full transition-all duration-[2s] group-hover:scale-105 opacity-85 sepia-[0.35] saturate-[0.8] brightness-[1.05] contrast-[0.95] group-hover:sepia-0 group-hover:saturate-100 group-hover:brightness-100 group-hover:contrast-100 group-hover:opacity-100 ${item.imageClassName || 'object-cover'}`}
+                    className={`w-full h-full transition-transform duration-[2s] group-hover:scale-105 ${item.imageClassName || 'object-cover'}`}
                   />
                 </div>
                 <div className="flex items-start gap-6">
