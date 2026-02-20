@@ -71,7 +71,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="flex-1 md:flex-none text-center md:text-left"
+            className="flex-1 text-center md:text-left"
           >
             <a href="/" className="inline-block">
               <img 
@@ -84,8 +84,8 @@ export default function Home() {
 
           <nav className="hidden md:flex flex-1 justify-center space-x-12">
             {[
-              { name: 'Shop', href: '/products' },
-              { name: 'Craft', href: '/products' },
+              { name: 'Harvest', href: '/products' },
+              { name: 'Tools', href: '/products' },
               { name: 'About', href: '/about' }
             ].map((item) => (
               <a 
