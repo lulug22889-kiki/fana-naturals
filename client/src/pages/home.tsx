@@ -11,6 +11,7 @@ import honeycombConeImg from "@assets/david-foodphototasty-P32HrGhzSB4-unsplash_
 import beeFlowerImg from "@assets/mamun-srizon-qyZAmc-8M1s-unsplash_1771552111332.jpg";
 import macroHoneycombImg from "@assets/jonas-hensel-3Cpws7ibtfo-unsplash_1771552113678.jpg";
 import drippingHoneycombImg from "@assets/pascal-bullan-k909E1ScuWA-unsplash_1771552118178.jpg";
+import coreImg from "@assets/Screenshot_2026-02-19_at_5.41.11_PM_1771552518642.png";
 
 export default function Home() {
   // Smooth scroll to top on mount
@@ -190,19 +191,14 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={fastStagger}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16"
+            className="flex justify-center w-full"
           >
-            {[
-              { title: "Love of Honeybees", icon: Heart },
-              { title: "Passion for Beekeeping", icon: Droplets },
-              { title: "Entrepreneurial Spirit", icon: Lightbulb },
-              { title: "Innovation", icon: Zap }
-            ].map((value, idx) => (
-              <motion.div key={idx} variants={viscousFade} className="group border-t border-foreground/10 pt-8 hover:border-accent transition-colors duration-700">
-                <value.icon strokeWidth={0.5} className="w-8 h-8 text-foreground/50 mb-6 group-hover:text-accent transition-colors duration-700" />
-                <h3 className="font-serif text-xl md:text-2xl text-foreground">{value.title}</h3>
-              </motion.div>
-            ))}
+            <motion.img 
+              variants={viscousFade}
+              src={coreImg} 
+              alt="Our Core Values" 
+              className="w-full max-w-5xl object-contain opacity-90 mix-blend-multiply"
+            />
           </motion.div>
         </div>
       </section>
