@@ -1,12 +1,13 @@
-import { motion } from "framer-motion";
-import beekeeperImg from "@assets/Screenshot_2026-02-18_at_10.54.50_AM_1771543079883.png";
+import { motion, Variants } from "framer-motion";
+import teamImg from "@assets/bigstock-Team-of-confident-male-and-fem-52387363_1771550599387.jpg";
+import childImg from "@assets/16450795331_593481280a_z_1771550614886.jpg";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -28,11 +29,11 @@ export default function About() {
           className="absolute inset-0"
         >
           <img 
-            src={beekeeperImg} 
-            alt="Beekeeper in rapeseed field" 
+            src={teamImg} 
+            alt="Fana Naturals Team" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-black/30"></div>
         </motion.div>
         
         <div className="relative z-10 text-center px-6">
@@ -49,19 +50,36 @@ export default function About() {
 
       {/* Narrative Section */}
       <section className="py-24 md:py-32 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-          >
-            <span className="text-accent uppercase tracking-[0.3em] text-xs mb-8 block font-medium">Our Heritage</span>
-            <p className="font-serif text-2xl md:text-3xl text-foreground/80 leading-relaxed">
-              Fana Naturals boasts over thirty years of experience in the global beekeeping industry. 
-              We are not just traders; we are observers of the delicate bond between bees and the earth.
-            </p>
-          </motion.div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+            >
+              <span className="text-accent uppercase tracking-[0.3em] text-xs mb-8 block font-medium">Our Heritage</span>
+              <p className="font-serif text-2xl md:text-3xl text-foreground/80 leading-relaxed mb-8">
+                Fana Naturals boasts over thirty years of experience in the global beekeeping industry. 
+                We are not just traders; we are observers of the delicate bond between bees and the earth.
+              </p>
+              <div className="w-12 h-px bg-accent"></div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <img 
+                src={childImg} 
+                alt="Child experiencing nature" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
