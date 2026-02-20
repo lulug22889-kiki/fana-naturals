@@ -97,12 +97,13 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            <button 
-              className="px-10 py-4 border border-white/40 text-white uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-primary transition-all duration-500 backdrop-blur-sm bg-white/5"
-              data-testid="button-explore"
+            <a 
+              href="/products"
+              className="inline-block px-10 py-4 border border-white/40 text-white uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-primary transition-all duration-500 backdrop-blur-sm bg-white/5"
+              data-testid="link-explore"
             >
               Explore the Harvest
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
