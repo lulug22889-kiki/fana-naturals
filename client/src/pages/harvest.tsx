@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import beePollenImg from "@assets/bigstock-Bee-Pollen-24241154_1771568204060.jpg";
 import rawHoneyImg from "@assets/屏幕快照_2016-09-20_17.53.10_1771568379514.png";
+import royalJellyImg from "@assets/royal_jelly_1771568486547.png";
 
 const chapters = [
   {
@@ -31,7 +32,8 @@ const chapters = [
     subtitle: "The Sovereign Elixir",
     essence: "Cognitive Clarity.",
     story: "Rich in rare 10-HDA, our Royal Jelly is curated for mental sharpness and longevity.",
-    image: "https://images.unsplash.com/photo-1589733901241-5d5d9b688c8a?q=80&w=2000&auto=format&fit=crop",
+    image: royalJellyImg,
+    imageClassName: "brightness-[1.02] contrast-[1.05] sepia-[0.1] saturate-[0.9]",
   },
   {
     id: "propolis",
