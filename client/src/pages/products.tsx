@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import toolsImg from "@assets/boris-smokrovic-gr7ZkoZnHXU-unsplash_1771543066987.jpg";
+import hiveImg from "@assets/ChatGPT_Image_Feb_20,_2026,_10_49_48_AM_1771613404291.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -32,7 +33,8 @@ const equipmentList = [
   {
     title: "Hive Architecture",
     desc: "Precision-milled Langstroth boxes and frames, kiln-dried for longevity against the elements.",
-    image: "https://images.unsplash.com/photo-1473256599800-b48c7c88cd7e?auto=format&fit=crop&w=800&q=80"
+    image: hiveImg,
+    imageClassName: "mix-blend-multiply"
   }
 ];
 
@@ -114,11 +116,11 @@ export default function Products() {
           >
             {equipmentList.map((item, idx) => (
               <motion.div key={idx} variants={fadeUp} className="group cursor-pointer">
-                <div className="aspect-[4/3] overflow-hidden mb-8 bg-[#2D2D2D]">
+                <div className="aspect-[4/3] overflow-hidden mb-8 bg-[#E5DFD3] rounded-sm">
                   <img 
                     src={item.image} 
                     alt={item.title} 
-                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal"
+                    className={`w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 ${item.imageClassName || 'mix-blend-luminosity group-hover:mix-blend-normal'}`}
                   />
                 </div>
                 <div className="flex items-start gap-6">
