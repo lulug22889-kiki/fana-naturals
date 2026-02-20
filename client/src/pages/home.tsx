@@ -85,7 +85,6 @@ export default function Home() {
           <nav className="hidden md:flex flex-1 justify-center space-x-12">
             {[
               { name: 'Shop', href: '/products' },
-              { name: 'Journal', href: '#' },
               { name: 'Craft', href: '/products' },
               { name: 'About', href: '/about' }
             ].map((item) => (
