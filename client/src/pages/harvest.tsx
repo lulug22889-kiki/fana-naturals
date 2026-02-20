@@ -4,6 +4,7 @@ import { Heart, Droplets, Lightbulb, Zap } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import beePollenImg from "@assets/bigstock-Bee-Pollen-24241154_1771568204060.jpg";
+import rawHoneyImg from "@assets/屏幕快照_2016-09-20_17.53.10_1771568379514.png";
 
 const chapters = [
   {
@@ -12,7 +13,8 @@ const chapters = [
     subtitle: "The Liquid Sun",
     essence: "Unfiltered. Uncompromised.",
     story: "Sourced from True Source Certified apiaries, our No. 1 Grade Canadian White Honey is the gold standard of purity.",
-    image: "https://images.unsplash.com/photo-1589733901241-5d5d9b688c8a?auto=format&fit=crop&w=1200&q=80",
+    image: rawHoneyImg,
+    imageClassName: "brightness-[1.05] contrast-[1.05] saturate-[0.85] sepia-[0.1]",
   },
   {
     id: "bee-pollen",
