@@ -11,6 +11,7 @@ import honeycombConeImg from "@assets/david-foodphototasty-P32HrGhzSB4-unsplash_
 import beeFlowerImg from "@assets/mamun-srizon-qyZAmc-8M1s-unsplash_1771552111332.jpg";
 import macroHoneycombImg from "@assets/jonas-hensel-3Cpws7ibtfo-unsplash_1771552113678.jpg";
 import drippingHoneycombImg from "@assets/pascal-bullan-k909E1ScuWA-unsplash_1771552118178.jpg";
+import royalJellyImg from "@assets/royal_jelly_1771553458816.png";
 import logoImg from "@assets/fana_naturals_transparent.png";
 import coreImg from "@assets/Screenshot_2026-02-19_at_5.41.11_PM_1771552518642.png";
 
@@ -303,7 +304,11 @@ export default function Home() {
               className="group"
             >
               <motion.div variants={viscousFade} className="aspect-[4/5] overflow-hidden mb-8 bg-black/5">
-                <img src={honeycombConeImg} alt="Pure Royal Jelly" className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" />
+                <img 
+                  src={royalJellyImg} 
+                  alt="Pure Royal Jelly" 
+                  className="w-full h-full object-cover object-center contrast-[1.05] brightness-[0.95] sepia-[.05] transition-transform duration-[2s] group-hover:scale-105" 
+                />
               </motion.div>
               <motion.div variants={viscousFade}>
                 <span className="text-xs uppercase tracking-[0.2em] text-accent mb-4 block font-sans">03</span>
