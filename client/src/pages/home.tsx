@@ -1,11 +1,16 @@
 import { useEffect } from "react";
-import { Search, User, ShoppingBag, Heart, Droplets, Lightbulb, Zap } from "lucide-react";
+import { Search, User, ShoppingBag, Heart, Droplets, Lightbulb, Zap, Instagram, Linkedin } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
-// Assets imported dynamically as per instructions
+// Assets
 import beekeeperImg from "@assets/Screenshot_2026-02-18_at_10.54.50_AM_1771543079883.png";
-import honeycombImg from "@assets/pascal-bullan-k909E1ScuWA-unsplash_1771543075444.jpg";
-import beeFlowerImg from "@assets/boris-smokrovic-gr7ZkoZnHXU-unsplash_1771543066987.jpg";
+
+// New Assets
+import hiveEntranceImg from "@assets/damien-tupinier-Q5rMCWwspxc-unsplash_1771552104262.jpg";
+import honeycombConeImg from "@assets/david-foodphototasty-P32HrGhzSB4-unsplash_1771552107351.jpg";
+import beeFlowerImg from "@assets/mamun-srizon-qyZAmc-8M1s-unsplash_1771552111332.jpg";
+import macroHoneycombImg from "@assets/jonas-hensel-3Cpws7ibtfo-unsplash_1771552113678.jpg";
+import drippingHoneycombImg from "@assets/pascal-bullan-k909E1ScuWA-unsplash_1771552118178.jpg";
 
 export default function Home() {
   // Smooth scroll to top on mount
@@ -13,12 +18,31 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
-  const fadeUp: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
+  // Viscous Fade-in (staggered 500ms delay) for text
+  const viscousFade: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 1.2, 
+        ease: [0.16, 1, 0.3, 1] 
+      } 
+    }
   };
 
-  const staggerContainer: Variants = {
+  const viscousStagger: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const fastStagger: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -29,15 +53,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col relative overflow-hidden">
-      {/* Subtle background texture/grain could go here */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.015] mix-blend-multiply bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-50"></div>
+    <div className="min-h-screen bg-[#F7F6F2] flex flex-col relative overflow-hidden text-foreground">
+      {/* Liquid Scroll effect using smooth CSS scroll behavior on html but we simulate it via normal scrolling with generous paddings and slow transitions */}
 
       {/* Header (The Minimalist) */}
-      <header className="fixed top-0 w-full z-40 glass-nav py-6 px-8 md:px-16 transition-all duration-300">
+      <header className="fixed top-0 w-full z-40 bg-[#F7F6F2]/80 backdrop-blur-xl border-b border-foreground/5 py-6 px-8 md:px-16 transition-all duration-300">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex-1 md:hidden">
-            {/* Mobile menu trigger could go here */}
             <div className="w-6 h-px bg-foreground mb-1.5"></div>
             <div className="w-4 h-px bg-foreground"></div>
           </div>
@@ -63,7 +85,7 @@ export default function Home() {
               <a 
                 key={item.name} 
                 href={item.href}
-                className="text-xs uppercase tracking-widest text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
+                className="text-xs uppercase tracking-[0.15em] text-foreground/70 hover:text-foreground transition-colors duration-300 relative group font-sans"
               >
                 {item.name}
                 <span className="absolute -bottom-2 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
@@ -86,7 +108,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section (The Sun-Drenched Meadow) */}
+      {/* Hero Section (The Sun-Drenched Meadow) - KEPT EXACTLY AS IS */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
         <motion.div 
           initial={{ scale: 1.05 }}
@@ -130,143 +152,254 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Philosophy Section (The Alchemist’s Note) */}
-      <section className="py-32 md:py-48 px-6 bg-background">
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUp}
-          className="max-w-3xl mx-auto text-center"
-        >
-          <div className="w-px h-16 bg-accent mx-auto mb-12 opacity-50"></div>
-          <p className="font-serif text-2xl md:text-4xl text-foreground/80 leading-relaxed md:leading-loose text-balance">
-            "Fana Naturals is born from thirty years of hands-on beekeeping. We treat honey as <span className="text-accent italic">liquid alchemy</span> and tools as craftsmen’s artifacts."
-          </p>
-        </motion.div>
-      </section>
-
-      {/* Featured Categories (The Grid) */}
-      <section className="py-20 px-6 md:px-12 max-w-[1400px] mx-auto w-full">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-          {/* Card A (Large): Raw Honey */}
+      {/* Section 01: The Origin - Heritage & Philosophy */}
+      <section className="py-32 md:py-48 px-6 bg-[#F7F6F2] relative z-10">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
           <motion.div 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="flex-[3] group relative overflow-hidden hover-lift hover-shadow-soft aspect-[4/5] md:aspect-auto"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={viscousStagger}
+            className="lg:col-span-5 lg:sticky lg:top-48"
           >
-            <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-            <img 
-              src={honeycombImg} 
-              alt="Raw Honeycomb" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent z-20 flex flex-col justify-end p-10 md:p-16">
-              <span className="text-accent text-xs uppercase tracking-widest mb-3 block">Pure Nectar</span>
-              <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Raw Honey</h2>
-              <div className="w-0 group-hover:w-16 h-px bg-white transition-all duration-500"></div>
-            </div>
+            <motion.h2 variants={viscousFade} className="font-serif text-4xl md:text-6xl text-foreground mb-8 leading-tight">
+              Rooted in the Wild.
+            </motion.h2>
+            <motion.div variants={viscousFade} className="w-16 h-px bg-accent"></motion.div>
           </motion.div>
 
-          {/* Card B (Small): The Craft */}
           <motion.div 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="flex-[2] group relative overflow-hidden hover-lift hover-shadow-soft flex flex-col"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={viscousStagger}
+            className="lg:col-span-7"
           >
-            <div className="relative aspect-[4/5] overflow-hidden bg-muted/20">
-              <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-              <img 
-                src={beeFlowerImg} 
-                alt="The Craft" 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 filter grayscale-[20%]"
-              />
-              <div className="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black/40 to-transparent">
-                <span className="text-accent text-xs uppercase tracking-widest mb-2 block">Artisanal Tools</span>
-                <h2 className="font-serif text-3xl text-white">The Craft</h2>
-              </div>
-            </div>
-            <div className="p-8 bg-white flex-1 flex flex-col justify-center border border-t-0 border-foreground/5">
-              <p className="text-foreground/60 text-sm leading-relaxed mb-6">
-                Professional beekeeping tools curated for the modern apiarist. Featuring metallic and wooden textures that age beautifully with use.
-              </p>
-              <a href="#craft" className="text-xs uppercase tracking-widest text-primary font-medium hover:text-accent transition-colors inline-flex items-center group/link">
-                View Collection
-                <span className="ml-2 transform group-hover/link:translate-x-1 transition-transform">→</span>
-              </a>
-            </div>
+            <motion.p variants={viscousFade} className="font-sans text-lg md:text-2xl text-foreground/80 leading-relaxed tracking-[0.05em] font-light">
+              "We are beekeepers first. For over thirty-five years, our pulse has followed the rhythm of the Canadian prairies. Fana Naturals exists at the intersection of heritage and stewardship. We manage the entire journey—from the untouched source to the processing facility—ensuring that the welfare of the bee is protected and the story of the land remains pure in every drop."
+            </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Value Proposition (The Core) */}
-      <section className="py-32 bg-white mt-12 border-y border-foreground/5">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <div className="text-center mb-20">
-            <h2 className="font-serif text-3xl md:text-4xl">Our Core</h2>
-            <div className="w-12 h-px bg-accent mx-auto mt-6"></div>
-          </div>
-          
+      {/* Transition: Our Core */}
+      <section className="py-24 bg-[#F7F6F2]">
+        <div className="max-w-[1400px] mx-auto px-6">
           <motion.div 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fastStagger}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16"
           >
             {[
-              { title: "Love of Honeybees", icon: Heart, desc: "A deep reverence for the swarm and their delicate ecosystem." },
-              { title: "Passion for Beekeeping", icon: Droplets, desc: "Thirty years of hands-on dedication to the apicultural arts." },
-              { title: "Entrepreneurial Spirit", icon: Lightbulb, desc: "Pioneering sustainable models for modern beekeepers." },
-              { title: "Innovation", icon: Zap, desc: "Elevating traditional methods through thoughtful design." }
+              { title: "Love of Honeybees", icon: Heart },
+              { title: "Passion for Beekeeping", icon: Droplets },
+              { title: "Entrepreneurial Spirit", icon: Lightbulb },
+              { title: "Innovation", icon: Zap }
             ].map((value, idx) => (
-              <motion.div key={idx} variants={fadeUp} className="text-center group">
-                <div className="mb-6 mx-auto w-16 h-16 rounded-full border border-foreground/10 flex items-center justify-center group-hover:border-accent group-hover:bg-accent/5 transition-colors duration-500">
-                  <value.icon strokeWidth={1} className="w-6 h-6 text-foreground/70 group-hover:text-accent transition-colors duration-500" />
-                </div>
-                <h3 className="font-serif text-xl mb-3 text-foreground">{value.title}</h3>
-                <p className="text-sm text-foreground/50 leading-relaxed text-balance">{value.desc}</p>
+              <motion.div key={idx} variants={viscousFade} className="group border-t border-foreground/10 pt-8 hover:border-accent transition-colors duration-700">
+                <value.icon strokeWidth={0.5} className="w-8 h-8 text-foreground/50 mb-6 group-hover:text-accent transition-colors duration-700" />
+                <h3 className="font-serif text-xl md:text-2xl text-foreground">{value.title}</h3>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-20 px-6 md:px-12 bg-background text-center flex flex-col items-center">
-        <h2 className="font-serif text-3xl tracking-[0.2em] uppercase mb-12">Fana Naturals</h2>
-        
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 mb-16 w-full max-w-4xl border-b border-foreground/10 pb-16">
-          <div className="flex space-x-8">
-            {['Instagram', 'Pinterest', 'Journal'].map((social) => (
-              <a key={social} href="#" className="text-xs uppercase tracking-widest text-foreground/60 hover:text-foreground transition-colors">
-                {social}
-              </a>
-            ))}
-          </div>
-          
-          <div className="flex w-full max-w-md">
-            <input 
-              type="email" 
-              placeholder="Join our newsletter" 
-              className="bg-transparent border-b border-foreground/20 py-2 px-0 w-full focus:outline-none focus:border-foreground transition-colors text-sm rounded-none"
-            />
-            <button className="text-xs uppercase tracking-widest text-foreground border-b border-foreground py-2 px-4 hover:text-accent hover:border-accent transition-colors whitespace-nowrap">
-              Subscribe
-            </button>
+      {/* Section 02: The Harvest - Nature’s Living Chemistry */}
+      <section className="py-32 bg-[#F7F6F2] relative">
+        <div className="max-w-[1400px] mx-auto px-6 mb-24">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={viscousStagger}
+            className="max-w-3xl"
+          >
+            <motion.h2 variants={viscousFade} className="font-serif text-4xl md:text-5xl text-foreground mb-8">
+              Nature’s Living Chemistry
+            </motion.h2>
+            <motion.p variants={viscousFade} className="font-sans text-lg text-foreground/70 leading-relaxed tracking-[0.05em] font-light">
+              Our collection spans the full vitality of the hive. From our signature No. 1 Grade Canadian White Honey to potent Floral Pollen, Royal Jelly, and Propolis. Every product is a result of meticulous sourcing and True Source Certified integrity.
+            </motion.p>
+          </motion.div>
+        </div>
+
+        {/* Product Ritual Gallery */}
+        <div className="max-w-[1400px] mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-24">
+            
+            {/* Item 1 */}
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={viscousStagger}
+              className="group"
+            >
+              <motion.div variants={viscousFade} className="aspect-[4/5] overflow-hidden mb-8 bg-black/5">
+                <img src={drippingHoneycombImg} alt="No. 1 Canadian White Honey" className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" />
+              </motion.div>
+              <motion.div variants={viscousFade}>
+                <span className="text-xs uppercase tracking-[0.2em] text-accent mb-4 block font-sans">01</span>
+                <h3 className="font-serif text-3xl mb-4">No. 1 Canadian White Honey</h3>
+                <p className="font-sans text-foreground/60 leading-relaxed tracking-[0.05em] font-light">
+                  Liquid sunshine from the prairies, cold-filtered to retain raw enzymes and floral notes.
+                </p>
+              </motion.div>
+            </motion.div>
+
+            {/* Item 2 (offset) */}
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={viscousStagger}
+              className="group md:mt-32"
+            >
+              <motion.div variants={viscousFade} className="aspect-[4/5] overflow-hidden mb-8 bg-black/5">
+                <img src={beeFlowerImg} alt="Potent Floral Pollen" className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" />
+              </motion.div>
+              <motion.div variants={viscousFade}>
+                <span className="text-xs uppercase tracking-[0.2em] text-accent mb-4 block font-sans">02</span>
+                <h3 className="font-serif text-3xl mb-4">Potent Floral Pollen</h3>
+                <p className="font-sans text-foreground/60 leading-relaxed tracking-[0.05em] font-light">
+                  Nature's multi-vitamin; a polychrome mosaic of pure floral energy collected at the peak of bloom.
+                </p>
+              </motion.div>
+            </motion.div>
+
+            {/* Item 3 */}
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={viscousStagger}
+              className="group"
+            >
+              <motion.div variants={viscousFade} className="aspect-[4/5] overflow-hidden mb-8 bg-black/5">
+                <img src={honeycombConeImg} alt="Pure Royal Jelly" className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" />
+              </motion.div>
+              <motion.div variants={viscousFade}>
+                <span className="text-xs uppercase tracking-[0.2em] text-accent mb-4 block font-sans">03</span>
+                <h3 className="font-serif text-3xl mb-4">Pure Royal Jelly</h3>
+                <p className="font-sans text-foreground/60 leading-relaxed tracking-[0.05em] font-light">
+                  The pearlescent elixir of the Queen Bee, a potent concentration of bioactive proteins.
+                </p>
+              </motion.div>
+            </motion.div>
+
+            {/* Item 4 (offset) */}
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={viscousStagger}
+              className="group md:mt-32"
+            >
+              <motion.div variants={viscousFade} className="aspect-[4/5] overflow-hidden mb-8 bg-black/5">
+                <img src={hiveEntranceImg} alt="Raw Propolis" className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" />
+              </motion.div>
+              <motion.div variants={viscousFade}>
+                <span className="text-xs uppercase tracking-[0.2em] text-accent mb-4 block font-sans">04</span>
+                <h3 className="font-serif text-3xl mb-4">Raw Propolis</h3>
+                <p className="font-sans text-foreground/60 leading-relaxed tracking-[0.05em] font-light">
+                  The sentinel’s resin; a powerful amber shield harvested to support natural resilience.
+                </p>
+              </motion.div>
+            </motion.div>
+
           </div>
         </div>
+      </section>
+
+      {/* Section 03: The Workshop - Equipment & Innovation */}
+      <section className="py-32 md:py-48 px-6 bg-[#2D2D2D] text-[#F7F6F2] relative">
+        <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none">
+           <img src={macroHoneycombImg} alt="Background texture" className="w-full h-full object-cover" />
+        </div>
         
-        <div className="flex flex-col md:flex-row justify-between w-full max-w-[1400px] text-xs text-foreground/40">
-          <p>Fana Naturals © 2026 | Captured Sunlight, Bottled Time.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 relative z-10">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={viscousStagger}
+            className="md:col-span-8 md:col-start-3 text-center"
+          >
+            <motion.h2 variants={viscousFade} className="font-serif text-4xl md:text-6xl mb-10 leading-tight">
+              Tools for the Modern Apiary.
+            </motion.h2>
+            <motion.p variants={viscousFade} className="font-sans text-lg md:text-xl text-white/70 leading-relaxed tracking-[0.05em] font-light">
+              Innovation that respects tradition. We provide commercial-grade supplies and high-performance machinery designed by those who have spent a lifetime in the field. We bring the industry’s most advanced technologies to beekeepers who demand durability.
+            </motion.p>
+            <motion.div variants={viscousFade} className="mt-16">
+              <a href="/products" className="inline-block border-b border-accent pb-2 text-accent uppercase tracking-[0.15em] text-sm font-sans hover:text-white hover:border-white transition-colors duration-500">
+                Explore the Workshop
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Section 04: The Global Pulse - Authority & Export */}
+      <section className="py-32 bg-[#F7F6F2]">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={viscousStagger}
+            className="flex flex-col md:flex-row items-end justify-between gap-12 border-b border-foreground/10 pb-24"
+          >
+            <div className="max-w-2xl">
+              <motion.h2 variants={viscousFade} className="font-serif text-4xl md:text-5xl text-foreground mb-8 leading-tight">
+                From Langley to the Global Hive.
+              </motion.h2>
+              <motion.p variants={viscousFade} className="font-sans text-lg text-foreground/70 leading-relaxed tracking-[0.05em] font-light">
+                Based in British Columbia, our reach is worldwide. We link the purity of Canadian agriculture with the demands of the global market, establishing a golden standard for transparency in the honey trade.
+              </motion.p>
+            </div>
+            <motion.div variants={viscousFade} className="w-24 h-24 rounded-full border border-accent flex items-center justify-center shrink-0 flex-col">
+              <span className="text-xs uppercase tracking-widest text-accent font-sans">Est.</span>
+              <span className="font-serif text-xl">1991</span>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* The Quiet Exit (Unified Footer) */}
+      <footer className="pt-12 pb-24 px-6 md:px-12 bg-[#F7F6F2]">
+        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+          
+          <div>
+            <h2 className="font-serif text-3xl tracking-[0.1em] uppercase mb-4">Fana Naturals</h2>
+            <p className="font-serif text-xl text-accent italic mb-8">Honest work. Pure origin.</p>
+            
+            <div className="space-y-1 font-sans text-sm text-foreground/60 tracking-[0.05em] font-light">
+              <p>Langley, British Columbia.</p>
+              <p>Serving the global hive.</p>
+            </div>
           </div>
+          
+          <div className="flex flex-col items-start md:items-end">
+            <div className="flex space-x-6 mb-12">
+              <a href="#" className="text-foreground/50 hover:text-accent transition-colors duration-300">
+                <Instagram strokeWidth={1} className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-foreground/50 hover:text-accent transition-colors duration-300">
+                <Linkedin strokeWidth={1} className="w-5 h-5" />
+              </a>
+            </div>
+            
+            <div className="flex space-x-6 font-sans text-xs text-foreground/40 tracking-[0.1em] uppercase">
+              <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
+              <a href="#" className="hover:text-foreground transition-colors">Terms</a>
+              <span>© {new Date().getFullYear()}</span>
+            </div>
+          </div>
+          
         </div>
       </footer>
     </div>

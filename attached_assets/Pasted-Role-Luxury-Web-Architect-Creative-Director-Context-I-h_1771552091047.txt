@@ -1,0 +1,60 @@
+Role: Luxury Web Architect & Creative Director.
+Context: I have already generated a Hero section I love (Captured Sunlight, Bottled Time). Keep the Hero section exactly as it is. Your task is to build the rest of the landing page and secondary views with high-end editorial aesthetics.
+
+1. Visual DNA & Motion (Hugo & Marie Style):
+
+Typography: Use Cormorant Garamond (Serif) for all headers and Inter (Sans-serif) with 0.05em letter-spacing for body text.
+
+Interactions: Implement a "Viscous Fade-in" (staggered 500ms delay) for text. Add a smooth "Liquid Scroll" effect to the whole page.
+
+Layout: Use an asymmetric grid with plenty of whitespace; elements should feel like they are floating on an oatmeal-white (#F7F6F2) canvas.
+
+2. Content Implementation (The 4 Pillars):
+
+Section 01: [The Origin - Heritage & Philosophy]
+
+Header: Rooted in the Wild.
+
+Copy: "We are beekeepers first. For over thirty-five years, our pulse has followed the rhythm of the Canadian prairies. Fana Naturals exists at the intersection of heritage and stewardship. We manage the entire journey—from the untouched source to the processing facility—ensuring that the welfare of the bee is protected and the story of the land remains pure in every drop."
+
+[Transition: Our Core]
+
+Insert the "Our Core" section with 4 minimalist icons: Love of Honeybees, Passion for Beekeeping, Entrepreneurial Spirit, and Innovation.
+
+Section 02: [The Harvest - Nature’s Living Chemistry]
+
+Intro Copy: "Our collection spans the full vitality of the hive. From our signature No. 1 Grade Canadian White Honey to potent Floral Pollen, Royal Jelly, and Propolis. Every product is a result of meticulous sourcing and True Source Certified integrity."
+
+Product Ritual Gallery (Horizontal Scroll or Elegant Grid): Create individual spotlight cards for each:
+
+No. 1 Canadian White Honey: Description: "Liquid sunshine from the prairies, cold-filtered to retain raw enzymes and floral notes."
+
+Potent Floral Pollen: Description: "Nature's multi-vitamin; a polychrome mosaic of pure floral energy collected at the peak of bloom."
+
+Pure Royal Jelly: Description: "The pearlescent elixir of the Queen Bee, a potent concentration of bioactive proteins."
+
+Raw Propolis: Description: "The sentinel’s resin; a powerful amber shield harvested to support natural resilience."
+
+Section 03: [The Workshop - Equipment & Innovation]
+
+Design: Switch to a cinematic Dark Mode background (#2D2D2D) with white serif text.
+
+Header: Tools for the Modern Apiary.
+
+Copy: "Innovation that respects tradition. We provide commercial-grade supplies and high-performance machinery designed by those who have spent a lifetime in the field. We bring the industry’s most advanced technologies to beekeepers who demand durability."
+
+Section 04: [The Global Pulse - Authority & Export]
+
+Header: From Langley to the Global Hive.
+
+Copy: "Based in British Columbia, our reach is worldwide. We link the purity of Canadian agriculture with the demands of the global market, establishing a golden standard for transparency in the honey trade."
+
+3. The Quiet Exit (Unified Footer):
+
+Tagline: Honest work. Pure origin.
+
+Info: Langley, British Columbia. Serving the global hive.
+
+Socials: Minimalist icons for Instagram and LinkedIn.
+
+Technical Requirement: Use React and Tailwind CSS. Ensure all sections are responsive and maintain a "Gallery-like" breathing space. Use high-contrast macro-photography of honeycombs and crystalline honey as background textures for Section 02.
