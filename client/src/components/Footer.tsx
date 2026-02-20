@@ -9,9 +9,14 @@ export default function Footer() {
           <h2 className="font-serif text-3xl tracking-[0.1em] uppercase mb-4">Fana Naturals</h2>
           <p className="font-serif text-xl text-accent italic mb-8">Honest work. Pure origin.</p>
           
-          <div className="space-y-1 font-sans text-sm text-foreground/60 tracking-[0.05em] font-light">
+          <div className="space-y-1 font-sans text-sm text-foreground/60 tracking-[0.05em] font-light mb-8">
             <p>Langley, British Columbia.</p>
             <p>Serving the global hive.</p>
+          </div>
+          
+          <div className="font-sans text-xs text-foreground/50 tracking-[0.05em] leading-relaxed max-w-[280px]">
+            <span className="font-medium text-foreground/80 block mb-1">Committed to Industry Standards:</span> 
+            Proud supporters of the global beekeeping community.
           </div>
         </div>
         

@@ -1,0 +1,62 @@
+Role: Luxury Web Architect & Creative Director.
+Project: Fana Naturals - Industry Resources Page (/industry).
+Aesthetic: Hugo & Marie Editorial Gallery. Oatmeal-white background, minimalist cards, and fluid 500ms fade-ins.
+
+1. Content Implementation (Verified 10 Industry Links):
+
+[Canada - National & Regional]
+
+Canadian Honey Council (CHC) - honeycouncil.ca
+
+Brief: The national advocate for Canada’s beekeeping industry since 1940, representing over 13,000 beekeepers and 800,000 colonies.
+
+BC Honey Producers’ Association (BCHPA) - bchoneyproducers.ca
+
+Brief: The oldest beekeeping association in BC (est. 1920), focusing on hive health, provincial research, and beekeeping education.
+
+Canadian Assoc. of Professional Apiculturists (CAPA) - capabees.com
+
+Brief: A professional body of scientists and administrators dedicated to the study of apiculture and sustainable pollination.
+
+Ontario Beekeepers' Association (OBA) - ontariobee.com
+
+Brief: One of North America’s oldest organizations, driving industry standards and bee research through its world-class Tech Adaptation Program.
+
+[USA - National & Research]
+5. American Beekeeping Federation (ABF) - abfnet.org
+
+Brief: A comprehensive national organization ensuring the future of honey bees through legislative advocacy and education.
+
+American Honey Producers Association (AHPA) - ahpanet.com
+
+Brief: An organization of beekeepers for beekeepers, dedicated specifically to the economic viability of honey production.
+
+National Honey Board (NHB) - honey.com
+
+Brief: An industry-funded R&P program that leverages research and marketing to expand the global and domestic honey market.
+
+Honey Bee Health Coalition - honeybeehealthcoalition.org
+
+Brief: A collaborative network of beekeepers, researchers, and farmers working together to improve hive health across North America.
+
+Project Apis m. (PAm) - projectapism.org
+
+Brief: The premier honey bee research organization in the USA and Canada, funding over $12M in practical solutions for healthier bees.
+
+Apimondia (International Federation) - apimondia.org
+
+Brief: The global authority for beekeeping, hosting the World Beekeeping Awards and setting the "Golden Standard" for honey purity.
+
+2. Design Directives:
+
+The Layout: Use a clean 2-column list (5 rows). Each row should have the Association Name in Cormorant Garamond (Bold), a short italicized description, and a discrete "Direct Access" link.
+
+The Interaction: On hover, the link color should transition from Charcoal to a "Warm Amber Gold."
+
+Typography: Ensure a high-contrast between the serif headers and the sans-serif links.
+
+3. Site Integration:
+
+Add "INDUSTRY" to the main Navigation Menu.
+
+In the Footer, add a small section: "Committed to Industry Standards: Proud supporters of the global beekeeping community."

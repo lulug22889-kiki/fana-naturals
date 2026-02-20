@@ -30,6 +30,7 @@ export default function Header() {
           {[
             { name: 'Harvest', href: '/harvest' },
             { name: 'Tools', href: '/products' },
+            { name: 'Industry', href: '/industry' },
             { name: 'About', href: '/about' }
           ].map((item) => (
             <a 
