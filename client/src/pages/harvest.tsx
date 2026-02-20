@@ -82,7 +82,7 @@ export default function Harvest() {
   const backgroundColor = useTransform(
     smoothProgress,
     [0, 0.2, 0.4, 0.6, 0.8, 1],
-    ["#FDFDFB", "#F9F3E5", "#F2E1B6", "#F9F3E5", "#F2E1B6", "#FDFDFB"]
+    ["#F9F3E5", "#FDFDFB", "#F2E1B6", "#F9F3E5", "#F2E1B6", "#FDFDFB"]
   );
 
   // Magnetic Cursor
@@ -129,7 +129,7 @@ export default function Harvest() {
         <div className="h-screen w-full flex flex-col justify-center snap-center relative px-6 overflow-hidden">
            {/* Faded and blurred background image */}
            <motion.div 
-             className="absolute inset-0 z-[-1] opacity-20"
+             className="absolute inset-0 z-[-1] opacity-50"
              initial={{ scale: 1.1, filter: "blur(20px)" }}
              animate={{ scale: 1, filter: "blur(8px)" }}
              transition={{ duration: 3, ease: "easeOut" }}
@@ -137,9 +137,9 @@ export default function Harvest() {
              <img 
                src={heroBgImg} 
                alt="Honeycomb background" 
-               className="w-full h-full object-cover object-center mix-blend-multiply"
+               className="w-full h-full object-cover object-center mix-blend-multiply sepia-[0.3] saturate-[1.3]"
              />
-             <div className="absolute inset-0 bg-gradient-to-b from-[#FDFDFB]/50 via-transparent to-[#FDFDFB]"></div>
+             <div className="absolute inset-0 bg-gradient-to-b from-[#F9F3E5]/50 via-transparent to-[#F9F3E5]"></div>
            </motion.div>
 
            <div className="text-center max-w-4xl mx-auto relative z-10">
