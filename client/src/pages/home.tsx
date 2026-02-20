@@ -11,7 +11,7 @@ import honeycombConeImg from "@assets/david-foodphototasty-P32HrGhzSB4-unsplash_
 import beeFlowerImg from "@assets/mamun-srizon-qyZAmc-8M1s-unsplash_1771552111332.jpg";
 import macroHoneycombImg from "@assets/jonas-hensel-3Cpws7ibtfo-unsplash_1771552113678.jpg";
 import drippingHoneycombImg from "@assets/pascal-bullan-k909E1ScuWA-unsplash_1771552118178.jpg";
-import logoImg from "@assets/fana_naturals_2__(3)_1771552752231.png";
+import logoImg from "@assets/fana_naturals_transparent.png";
 import coreImg from "@assets/Screenshot_2026-02-19_at_5.41.11_PM_1771552518642.png";
 
 export default function Home() {
@@ -76,7 +76,7 @@ export default function Home() {
               <img 
                 src={logoImg} 
                 alt="Fana Naturals" 
-                className="h-10 md:h-12 w-auto object-contain mix-blend-multiply"
+                className="h-10 md:h-12 w-auto object-contain"
               />
             </a>
           </motion.div>
