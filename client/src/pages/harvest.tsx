@@ -7,6 +7,7 @@ import beePollenImg from "@assets/bigstock-Bee-Pollen-24241154_1771568204060.jpg
 import rawHoneyImg from "@assets/屏幕快照_2016-09-20_17.53.10_1771568379514.png";
 import royalJellyImg from "@assets/royal_jelly_1771568486547.png";
 import heroBgImg from "@assets/pascal-bullan-k909E1ScuWA-unsplash_1771568577485.jpg";
+import propolisImg from "@assets/ChatGPT_Image_Feb_19,_2026,_09_57_59_PM_1771568750106.png";
 
 const chapters = [
   {
@@ -42,7 +43,8 @@ const chapters = [
     subtitle: "The Resin Guard",
     essence: "Biological Defense.",
     story: "Containing over 300 beneficial compounds, this is nature’s answer to immune support.",
-    image: "https://images.unsplash.com/photo-1473256599800-b48c7c88cd7e?auto=format&fit=crop&w=1200&q=80",
+    image: propolisImg,
+    imageClassName: "mix-blend-multiply contrast-[1.05] brightness-[0.98] sepia-[0.1] saturate-[0.9]",
   },
   {
     id: "lyophilized-powders",
