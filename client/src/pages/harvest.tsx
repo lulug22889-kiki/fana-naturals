@@ -19,7 +19,7 @@ const chapters = [
     essence: "Unfiltered. Uncompromised.",
     story: "Sourced from True Source Certified apiaries, our No. 1 Grade Canadian White Honey is the gold standard of purity.",
     image: rawHoneyImg,
-    imageClassName: "brightness-[1.05] contrast-[1.05] saturate-[0.85] sepia-[0.1]",
+    imageClassName: "brightness-[1.05] contrast-[1.05] saturate-100",
   },
   {
     id: "bee-pollen",
@@ -28,7 +28,7 @@ const chapters = [
     essence: "Concentrated Vitality.",
     story: "A bioavailable powerhouse of B vitamins and minerals to fuel a modern, rhythmic life.",
     image: beePollenImg,
-    imageClassName: "mix-blend-multiply contrast-110 brightness-95 sepia-[.2]",
+    imageClassName: "mix-blend-multiply contrast-110 brightness-95 saturate-[1.2]",
   },
   {
     id: "royal-jelly",
@@ -37,7 +37,7 @@ const chapters = [
     essence: "Cognitive Clarity.",
     story: "Rich in rare 10-HDA, our Royal Jelly is curated for mental sharpness and longevity.",
     image: royalJellyImg,
-    imageClassName: "brightness-[1.02] contrast-[1.05] sepia-[0.1] saturate-[0.9]",
+    imageClassName: "brightness-[1.02] contrast-[1.05] saturate-[1.1]",
   },
   {
     id: "propolis",
@@ -46,7 +46,7 @@ const chapters = [
     essence: "Biological Defense.",
     story: "Containing over 300 beneficial compounds, this is nature’s answer to immune support.",
     image: propolisImg,
-    imageClassName: "mix-blend-multiply contrast-[1.05] brightness-[0.98] sepia-[0.1] saturate-[0.9]",
+    imageClassName: "mix-blend-multiply contrast-[1.05] brightness-[0.98] saturate-[1.15]",
   },
   {
     id: "lyophilized-powders",
@@ -55,7 +55,7 @@ const chapters = [
     essence: "Preserved Potency.",
     story: "Advanced freeze-drying locks in 100% of biological benefits, bridging 35 years of tradition with modern wellness.",
     image: powderImg,
-    imageClassName: "mix-blend-multiply contrast-[1.05] brightness-[0.98] sepia-[0.1] saturate-[0.9]",
+    imageClassName: "mix-blend-multiply contrast-[1.05] brightness-[0.98] saturate-[1.15]",
   },
   {
     id: "beeswax",
@@ -64,7 +64,7 @@ const chapters = [
     essence: "Pure Structure.",
     story: "Triple-filtered and chemical-free, representing the foundational strength of our 35-year harvest.",
     image: beeswaxImg,
-    imageClassName: "mix-blend-multiply contrast-[1.02] brightness-[0.98] sepia-[0.15] saturate-[0.85]",
+    imageClassName: "mix-blend-multiply contrast-[1.02] brightness-[0.98] saturate-[1.2]",
   }
 ];
 
