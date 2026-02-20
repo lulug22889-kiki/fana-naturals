@@ -80,7 +80,7 @@ const itemVariants = {
 
 export default function Industry() {
   return (
-    <div className="min-h-screen bg-[#FDFDFB] text-foreground selection:bg-accent/20">
+    <div className="min-h-screen bg-[#EAE5D9] text-[#2C2A25] selection:bg-accent/20">
       <Header />
       
       <main className="pt-40 pb-32 px-6 md:px-16 max-w-7xl mx-auto">
@@ -92,10 +92,10 @@ export default function Industry() {
             className="md:w-1/2"
           >
             <span className="font-sans text-xs tracking-[0.2em] uppercase text-accent mb-6 block">Directory</span>
-            <h1 className="font-serif text-5xl md:text-7xl font-light tracking-tight leading-tight mb-8">
+            <h1 className="font-serif text-5xl md:text-7xl font-light tracking-tight leading-tight mb-8 text-[#1A1918]">
               Industry Resources
             </h1>
-            <p className="font-sans text-lg font-light leading-relaxed text-foreground/70 max-w-md">
+            <p className="font-sans text-lg font-light leading-relaxed text-[#2C2A25]/70 max-w-md">
               A curated index of the leading councils, boards, and scientific bodies driving the global apiculture standard.
             </p>
           </motion.div>
@@ -104,12 +104,12 @@ export default function Industry() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            className="w-full md:w-1/2 aspect-[4/3] overflow-hidden rounded-sm"
+            className="w-full md:w-1/2 aspect-[4/3] overflow-hidden rounded-sm bg-[#DCD6C8]"
           >
             <img 
               src={beesImg} 
               alt="Queen Bee and colony" 
-              className="w-full h-full object-cover grayscale opacity-90 sepia-[0.2] contrast-[1.1] transition-all duration-[2s] hover:grayscale-0 hover:opacity-100 hover:scale-105"
+              className="w-full h-full object-cover mix-blend-luminosity opacity-80 contrast-[1.1] sepia-[0.1] transition-all duration-[2s] hover:mix-blend-normal hover:opacity-100 hover:scale-105"
             />
           </motion.div>
         </div>
@@ -124,12 +124,12 @@ export default function Industry() {
             <motion.div 
               key={idx} 
               variants={itemVariants}
-              className="group flex flex-col items-start border-t border-foreground/10 pt-8"
+              className="group flex flex-col items-start border-t border-[#2C2A25]/10 pt-8"
             >
-              <h3 className="font-serif text-2xl font-bold tracking-wide mb-4 text-foreground group-hover:text-foreground/90 transition-colors">
+              <h3 className="font-serif text-2xl font-bold tracking-wide mb-4 text-[#1A1918] group-hover:text-[#7A6440] transition-colors">
                 {assoc.name}
               </h3>
-              <p className="font-serif italic text-lg text-foreground/60 leading-relaxed mb-8 flex-grow">
+              <p className="font-serif italic text-lg text-[#2C2A25]/70 leading-relaxed mb-8 flex-grow">
                 {assoc.desc}
               </p>
               
@@ -137,7 +137,7 @@ export default function Industry() {
                 href={assoc.url} 
                 target="_blank" 
                 rel="noreferrer"
-                className="font-sans text-xs uppercase tracking-[0.15em] text-foreground/80 hover:text-accent transition-colors duration-500 flex items-center gap-3"
+                className="font-sans text-xs uppercase tracking-[0.15em] text-[#2C2A25]/80 hover:text-accent transition-colors duration-500 flex items-center gap-3"
               >
                 <span>Direct Access</span>
                 <span className="w-6 h-px bg-current transition-all duration-500 group-hover:w-10"></span>
