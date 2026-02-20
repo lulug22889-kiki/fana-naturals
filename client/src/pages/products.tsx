@@ -25,8 +25,8 @@ const equipmentList = [
     imageClassName: "object-cover"
   },
   {
-    title: "Precision Smokers",
-    desc: "Durable, heat-shielded bellows designed for consistent, cool smoke to keep the colony calm and safe.",
+    title: "Essential Hive Tools",
+    desc: "A comprehensive suite of precision-forged steel tools, durable smokers, and specialized brushes designed for seamless apiary management.",
     image: smokerImg,
     imageClassName: "mix-blend-multiply object-contain p-8"
   },
