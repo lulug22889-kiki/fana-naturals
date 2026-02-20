@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 // Assets
-import heroImg from "@assets/bigstock-Bee-Hives-On-Lavender-Fields--87121574_1771627049512.jpg";
+import beekeeperImg from "@assets/Screenshot_2026-02-18_at_10.54.50_AM_1771543079883.png";
 
 // New Assets
 import hiveEntranceImg from "@assets/damien-tupinier-Q5rMCWwspxc-unsplash_1771552104262.jpg";
@@ -69,15 +69,15 @@ export default function Home() {
           initial={{ scale: 1.05 }}
           animate={{ scale: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute inset-0 z-0 bg-[#111]"
+          className="absolute inset-0 z-0"
         >
           <img 
-            src={heroImg} 
-            alt="Beehives in lavender field" 
-            className="w-full h-full object-cover object-center opacity-90 contrast-[1.1] saturate-[1.1]"
+            src={beekeeperImg} 
+            alt="Beekeeper in rapeseed field" 
+            className="w-full h-full object-cover object-center opacity-95"
           />
-          {/* Premium cinematic gradient overlay for high-end feel */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-background/95"></div>
+          {/* Premium cinematic gradient overlay for high-end feel while maintaining legibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-background/95"></div>
         </motion.div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
@@ -85,11 +85,11 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.5 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-8 leading-[1.1] drop-shadow-md tracking-tight"
-            style={{ textShadow: '0 4px 20px rgba(0,0,0,0.1)' }}
+            className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-8 leading-[1.1] tracking-tight"
+            style={{ textShadow: '0 10px 40px rgba(0,0,0,0.6), 0 2px 10px rgba(0,0,0,0.4)' }}
           >
             The Art of Apiculture,<br />
-            <span className="italic font-light opacity-90 tracking-normal text-4xl md:text-5xl lg:text-6xl mt-4 block">Pure Origin & Precision Design.</span>
+            <span className="italic font-light opacity-100 tracking-normal text-4xl md:text-5xl lg:text-6xl mt-6 block">Pure Origin & Precision Design.</span>
           </motion.h1>
           
           <motion.div
