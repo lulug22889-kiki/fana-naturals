@@ -1,4 +1,5 @@
-import { motion, Variants } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import toolsImg from "@assets/boris-smokrovic-gr7ZkoZnHXU-unsplash_1771543066987.jpg";
@@ -8,169 +9,157 @@ import smokerImg from "@assets/smoker.png";
 import suitImg from "@assets/suit.png";
 import hiveBoxesImg from "@assets/hive-boxes.png";
 
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-};
-
-const staggerContainer: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
-};
-
 const equipmentList = [
   {
     title: "Commercial Extractors",
-    desc: "High-yield centrifugal systems built with surgical-grade stainless steel for maximum efficiency and pure extraction.",
+    desc: "Precision-engineered stainless steel for high-volume, cold-extraction efficiency.",
     image: extractorImg
   },
   {
-    title: "Precision Smokers",
-    desc: "Durable, heat-shielded bellows designed for consistent, cool smoke to keep the colony calm and safe.",
+    title: "Industrial Smokers",
+    desc: "Professional-grade bellows with a thermal-shield design, crafted for the demands of the modern field.",
     image: smokerImg
   },
   {
-    title: "Protective Gear",
-    desc: "Ventilated, multi-layer apiary suits offering complete sting protection without compromising mobility.",
+    title: "Protective Armor",
+    desc: "High-performance ventilation meets archival-grade fabric protection.",
     image: suitImg
   },
   {
     title: "Hive Architecture",
-    desc: "Precision-milled Langstroth boxes and frames, kiln-dried for longevity against the elements.",
+    desc: "Precision-cut Langstroth modular systems, designed for colony longevity and ergonomic handling.",
     image: hiveBoxesImg
   }
 ];
 
-export default function Products() {
+function EquipmentSection({ item, index }: { item: any, index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [100, 0, 0, -100]);
+  const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.95, 1, 1, 1.05]);
+
   return (
-    <div className="pt-24 min-h-screen bg-background text-foreground">
-      <Header />
+    <section 
+      ref={ref}
+      className="h-screen w-full snap-center flex items-center justify-center relative overflow-hidden bg-[#1A1A1A]"
+    >
+      <motion.div 
+        style={{ opacity, scale }}
+        className="absolute inset-0 w-full h-full"
+      >
+        <img 
+          src={item.image} 
+          alt={item.title} 
+          className="w-full h-full object-cover grayscale opacity-50 transition-all duration-[1.5s] ease-out hover:grayscale-0 hover:opacity-100 hover:scale-105 mix-blend-luminosity hover:mix-blend-normal"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A] via-[#1A1A1A]/60 to-transparent pointer-events-none"></div>
+      </motion.div>
+
+      <motion.div 
+        style={{ opacity, y }}
+        className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center justify-start pointer-events-none"
+      >
+        <div className="md:w-1/2 mb-12 md:mb-0 pointer-events-auto">
+          <span className="font-sans text-xs uppercase tracking-[0.4em] text-white/50 mb-6 block">
+            0{index + 1} // System
+          </span>
+          <h2 
+            className="text-5xl md:text-7xl text-white mb-8" 
+            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          >
+            {item.title}
+          </h2>
+          <div className="w-16 h-px bg-white/30 mb-8"></div>
+          <p 
+            className="text-white/70 text-lg md:text-xl font-light tracking-[0.05em] max-w-md leading-relaxed"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            {item.desc}
+          </p>
+        </div>
+      </motion.div>
+    </section>
+  );
+}
+
+export default function Products() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  return (
+    <div className="bg-[#1A1A1A] text-white h-screen font-sans snap-y snap-mandatory overflow-y-auto overflow-x-hidden relative" ref={containerRef}>
+      <div className="absolute top-0 w-full z-50">
+        <Header />
+      </div>
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] w-full flex items-center justify-center overflow-hidden bg-[#2D2D2D]">
-        <motion.div 
-          initial={{ scale: 1.05, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          className="absolute inset-0"
-        >
+      <section className="h-screen w-full snap-center flex items-center justify-center relative">
+        <div className="absolute inset-0">
           <img 
             src={toolsImg} 
-            alt="Professional beekeeping tools" 
-            className="w-full h-full object-cover object-center opacity-40 mix-blend-luminosity grayscale"
+            alt="Tools for the Modern Apiary" 
+            className="w-full h-full object-cover opacity-30 mix-blend-luminosity grayscale"
           />
-        </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-[#1A1A1A]/80"></div>
+        </div>
         
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto mt-20">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="font-sans text-accent uppercase tracking-[0.3em] text-xs mb-6 block"
+            transition={{ duration: 1, delay: 0.3 }}
+            className="font-sans text-white/50 uppercase tracking-[0.4em] text-sm mb-8 block"
           >
-            Professional Equipment
+            03. The Workshop
           </motion.span>
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif text-[#FDFDFB] leading-tight mb-6"
+            transition={{ duration: 1.2, delay: 0.5, ease: [0.2, 0.65, 0.3, 0.9] }}
+            className="text-6xl md:text-7xl lg:text-8xl text-white leading-tight mb-10"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            The Workshop
+            Tools for the Modern Apiary
           </motion.h1>
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="font-sans text-[#FDFDFB]/70 text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto"
-          >
-            Advanced technology meets 35 years of apicultural heritage.
-          </motion.p>
+            transition={{ duration: 1.5, delay: 1 }}
+            className="w-px h-32 bg-white/30 mx-auto mt-16"
+          ></motion.div>
         </div>
       </section>
 
-      {/* Intro Philosophy */}
-      <section className="py-24 md:py-32 px-6 bg-[#FDFDFB]">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-          >
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8 leading-relaxed" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-              "We build the tools we wished we had. Reliable quality and advanced engineering for the modern commercial apiary."
-            </h2>
-            <div className="w-16 h-px bg-accent mx-auto"></div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Product Modules */}
+      {equipmentList.map((item, idx) => (
+        <EquipmentSection key={idx} item={item} index={idx} />
+      ))}
 
-      {/* Equipment Grid */}
-      <section className="py-24 bg-[#F9F3E5]">
-        <div className="max-w-[1400px] mx-auto px-6">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16"
+      {/* Global Exit */}
+      <section className="min-h-screen w-full snap-start flex flex-col justify-end relative bg-[#1A1A1A]">
+        <div className="flex-grow flex flex-col items-center justify-center text-center px-6 mt-32">
+          <h2 
+            className="text-4xl md:text-6xl text-white mb-6" 
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
           >
-            {equipmentList.map((item, idx) => (
-              <motion.div key={idx} variants={fadeUp} className="group cursor-pointer">
-                <div className="aspect-[4/3] overflow-hidden mb-8 bg-[#2D2D2D]">
-                  <img 
-                    src={item.image} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal"
-                  />
-                </div>
-                <div className="flex items-start gap-6">
-                  <span className="font-sans text-xs uppercase tracking-[0.2em] text-accent mt-2">
-                    0{idx + 1}
-                  </span>
-                  <div>
-                    <h3 className="font-serif text-3xl mb-4 text-foreground" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                      {item.title}
-                    </h3>
-                    <p className="font-sans text-foreground/70 leading-relaxed font-light tracking-wide">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Specs CTA */}
-      <section className="py-32 px-6 bg-[#2D2D2D] text-center">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
+            Honest work. Pure origin.
+          </h2>
+          <p className="font-sans text-white/50 tracking-[0.2em] uppercase text-sm mb-16">
+            Engineered for the long term
+          </p>
+          <a 
+            href="/about" 
+            className="inline-block px-12 py-5 border border-white/20 text-white uppercase tracking-[0.3em] text-xs hover:bg-white hover:text-[#1A1A1A] transition-all duration-700"
           >
-            <h2 className="font-serif text-4xl md:text-5xl text-[#FDFDFB] mb-8" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-              Custom Industrial Orders
-            </h2>
-            <p className="font-sans text-[#FDFDFB]/70 mb-12 font-light tracking-wide leading-relaxed">
-              Every apiary operates on its own rhythm. We offer bespoke engineering modifications and bulk supply logistics to scale with your operation.
-            </p>
-            <a 
-              href="/about" 
-              className="inline-block px-12 py-4 border border-[#FDFDFB]/20 text-[#FDFDFB] uppercase tracking-[0.2em] text-sm hover:bg-[#FDFDFB] hover:text-[#2D2D2D] transition-all duration-500 font-sans"
-            >
-              Inquire for Specifications
-            </a>
-          </motion.div>
+            Explore Custom Orders
+          </a>
         </div>
+        <Footer dark />
       </section>
-
-      <Footer />
     </div>
   );
 }
