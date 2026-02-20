@@ -31,7 +31,7 @@ export default function About() {
           <img 
             src={teamImg} 
             alt="Fana Naturals Team" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[center_25%]"
           />
           <div className="absolute inset-0 bg-black/30"></div>
         </motion.div>
