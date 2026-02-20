@@ -1,14 +1,19 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import toolsImg from "@assets/boris-smokrovic-gr7ZkoZnHXU-unsplash_1771543066987.jpg";
 
-const fadeUp = {
+import extractorImg from "@assets/extractor.png";
+import smokerImg from "@assets/smoker.png";
+import suitImg from "@assets/suit.png";
+import hiveBoxesImg from "@assets/hive-boxes.png";
+
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
 };
@@ -17,22 +22,22 @@ const equipmentList = [
   {
     title: "Commercial Extractors",
     desc: "High-yield centrifugal systems built with surgical-grade stainless steel for maximum efficiency and pure extraction.",
-    image: "https://images.unsplash.com/photo-1587049352847-ecb60b29ce45?auto=format&fit=crop&w=800&q=80"
+    image: extractorImg
   },
   {
     title: "Precision Smokers",
     desc: "Durable, heat-shielded bellows designed for consistent, cool smoke to keep the colony calm and safe.",
-    image: "https://images.unsplash.com/photo-1587049352841-8d4e8979c5c7?auto=format&fit=crop&w=800&q=80"
+    image: smokerImg
   },
   {
     title: "Protective Gear",
     desc: "Ventilated, multi-layer apiary suits offering complete sting protection without compromising mobility.",
-    image: "https://images.unsplash.com/photo-1622396131435-081cb70407a1?auto=format&fit=crop&w=800&q=80"
+    image: suitImg
   },
   {
     title: "Hive Architecture",
     desc: "Precision-milled Langstroth boxes and frames, kiln-dried for longevity against the elements.",
-    image: "https://images.unsplash.com/photo-1473256599800-b48c7c88cd7e?auto=format&fit=crop&w=800&q=80"
+    image: hiveBoxesImg
   }
 ];
 
