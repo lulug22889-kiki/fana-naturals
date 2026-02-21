@@ -37,6 +37,15 @@ app.use(
   })
 );
 
+app.use(
+  "/sanity-proxy/global-api",
+  createProxyMiddleware({
+    target: "https://api.sanity.io",
+    changeOrigin: true,
+    pathRewrite: { "^/sanity-proxy/global-api": "" },
+  })
+);
+
 const studioPath = path.resolve(__dirname, "..", "dist", "studio");
 app.use("/static", express.static(path.join(studioPath, "static")));
 
@@ -54,6 +63,10 @@ const proxyScript = `<script>
     if (url.indexOf(PID + ".apicdn.sanity.io") !== -1) {
       var p = new URL(url);
       return "/sanity-proxy/cdn" + p.pathname + p.search;
+    }
+    if (url.indexOf("api.sanity.io") !== -1 && url.indexOf(PID) === -1) {
+      var p = new URL(url);
+      return "/sanity-proxy/global-api" + p.pathname + p.search;
     }
     return null;
   }
@@ -76,6 +89,15 @@ const proxyScript = `<script>
     }
     return origOpen.apply(this, arguments);
   };
+  var OrigES = window.EventSource;
+  window.EventSource = function(url, opts) {
+    var proxied = rewrite(typeof url === "string" ? url : url.toString());
+    return new OrigES(proxied || url, opts);
+  };
+  window.EventSource.prototype = OrigES.prototype;
+  window.EventSource.CONNECTING = OrigES.CONNECTING;
+  window.EventSource.OPEN = OrigES.OPEN;
+  window.EventSource.CLOSED = OrigES.CLOSED;
 })();
 </script>`;
 const modifiedStudioHtml = studioHtml.replace("<head>", "<head>" + proxyScript);
