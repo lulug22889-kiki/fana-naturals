@@ -74,10 +74,10 @@ export default function Home() {
           <img 
             src={beekeeperImg} 
             alt="Beekeeper in rapeseed field" 
-            className="w-full h-full object-cover object-center opacity-95"
+            className="w-full h-full object-cover object-center brightness-110 saturate-[1.05]"
           />
-          {/* Premium cinematic gradient overlay for high-end feel while maintaining legibility */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-background/95"></div>
+          {/* Subtle gradient overlay to keep it bright and sun-drenched while maintaining text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-background/90"></div>
         </motion.div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
