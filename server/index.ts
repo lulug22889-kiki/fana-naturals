@@ -1,7 +1,11 @@
 import express, { type Request, Response, NextFunction } from "express";
+import path from "path";
+import { fileURLToPath } from "url";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const httpServer = createServer(app);
@@ -60,6 +64,16 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  const studioPath = path.resolve(__dirname, "..", "dist", "studio");
+  app.use("/admin", express.static(studioPath));
+  app.use("/static", express.static(path.join(studioPath, "static")));
+  app.use((req: Request, res: Response, next: NextFunction) => {
+    if (req.path.startsWith("/admin")) {
+      return res.sendFile(path.join(studioPath, "index.html"));
+    }
+    next();
+  });
+
   await registerRoutes(httpServer, app);
 
   app.use((err: any, _req: Request, res: Response, next: NextFunction) => {

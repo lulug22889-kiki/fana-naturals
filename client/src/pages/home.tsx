@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Heart, Droplets, Lightbulb, Zap } from "lucide-react";
 import { motion, Variants } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -18,10 +19,21 @@ import logoImg from "@assets/fana_naturals_transparent.png";
 import coreImg from "@assets/Screenshot_2026-02-19_at_5.41.11_PM_1771552518642.png";
 
 export default function Home() {
-  // Smooth scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const { data: pageData } = useQuery<any>({
+    queryKey: ["/api/sanity/page/home"],
+    retry: false,
+    staleTime: 1000 * 60 * 5,
+  });
+
+  const heroHeadline = pageData?.heroHeadline || "The Global Vision";
+  const heroSubheadline = pageData?.heroSubheadline || "Uncompromising Quality Since 1989";
+  const heroImageUrl = pageData?.heroImageUrl;
+  const heroCtaText = pageData?.heroCtaText || "Explore the Harvest";
+  const heroCtaLink = pageData?.heroCtaLink || "/harvest";
 
   // Viscous Fade-in (staggered 500ms delay) for text
   const viscousFade: Variants = {
@@ -72,7 +84,7 @@ export default function Home() {
           className="absolute inset-0 z-0"
         >
           <img 
-            src={beekeeperImg} 
+            src={heroImageUrl || beekeeperImg} 
             alt="Beekeeper in rapeseed field" 
             className="w-full h-full object-cover object-center brightness-110 saturate-[1.05]"
           />
@@ -88,9 +100,9 @@ export default function Home() {
             className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-[1.15] tracking-tight"
             style={{ textShadow: '0 10px 40px rgba(0,0,0,0.6), 0 2px 10px rgba(0,0,0,0.4)' }}
           >
-            The Global Vision<br />
+            {heroHeadline}<br />
             <span className="font-sans font-light uppercase tracking-[0.25em] text-sm md:text-base lg:text-lg mt-8 block text-white/90" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-              Uncompromising Quality Since 1989
+              {heroSubheadline}
             </span>
           </motion.h1>
           
@@ -100,11 +112,11 @@ export default function Home() {
             transition={{ duration: 1, delay: 1 }}
           >
             <a 
-              href="/harvest"
+              href={heroCtaLink}
               className="inline-block px-10 py-4 border border-white/40 text-white uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-primary transition-all duration-500 backdrop-blur-sm bg-white/5"
               data-testid="link-explore"
             >
-              Explore the Harvest
+              {heroCtaText}
             </a>
           </motion.div>
         </div>
