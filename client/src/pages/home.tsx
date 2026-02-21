@@ -85,11 +85,13 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.5 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-8 leading-[1.1] tracking-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-[1.15] tracking-tight"
             style={{ textShadow: '0 10px 40px rgba(0,0,0,0.6), 0 2px 10px rgba(0,0,0,0.4)' }}
           >
-            A Global Legacy of Excellence,<br />
-            <span className="italic font-light opacity-100 tracking-normal text-4xl md:text-5xl lg:text-6xl mt-6 block">Pure Origin & Precision Design.</span>
+            Thirty-Five Years of Excellence,<br />
+            <span className="font-sans font-light uppercase tracking-[0.25em] text-sm md:text-base lg:text-lg mt-8 block text-white/90" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+              A Global Force in Apiculture.
+            </span>
           </motion.h1>
           
           <motion.div
