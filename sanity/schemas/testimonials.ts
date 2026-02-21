@@ -44,7 +44,6 @@ export default defineType({
       title: 'Featured',
       type: 'boolean',
       description: 'Show this testimonial on the homepage.',
-      initialValue: false,
     }),
     defineField({
       name: 'order',

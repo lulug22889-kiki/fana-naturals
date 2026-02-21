@@ -8,6 +8,7 @@ export default defineConfig({
   title: 'Fana Naturals CMS',
   projectId: 'cmz2cc1a',
   dataset: 'production',
+  apiVersion: '2023-05-03',
   basePath: '/admin',
   plugins: [
     structureTool({

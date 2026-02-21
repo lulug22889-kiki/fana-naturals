@@ -55,7 +55,6 @@ export default defineType({
       title: 'Featured',
       type: 'boolean',
       description: 'Whether this service should appear in the featured section.',
-      initialValue: false,
     }),
   ],
   orderings: [

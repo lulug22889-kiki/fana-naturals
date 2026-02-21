@@ -8,7 +8,7 @@ const token = process.env.SANITY_API_TOKEN || '';
 export const sanityClient = createClient({
   projectId,
   dataset,
-  apiVersion: '2024-01-01',
+  apiVersion: '2023-05-03',
   useCdn: false,
   token: token || undefined,
 });
