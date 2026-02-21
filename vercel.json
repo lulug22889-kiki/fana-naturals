@@ -8,6 +8,7 @@
     { "source": "/api/(.*)", "destination": "/api/serverless" },
     { "source": "/admin", "destination": "/api/serverless" },
     { "source": "/admin/(.*)", "destination": "/api/serverless" },
-    { "source": "/static/(.*)", "destination": "/static/$1" }
+    { "source": "/static/(.*)", "destination": "/static/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

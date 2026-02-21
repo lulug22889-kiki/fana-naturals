@@ -1,5 +1,6 @@
 import { Search, User, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import logoImg from "@assets/fana_naturals_transparent.png";
 
 export default function Header() {
@@ -17,13 +18,13 @@ export default function Header() {
           transition={{ duration: 1.5 }}
           className="flex-1 text-center md:text-left"
         >
-          <a href="/" className="inline-block">
+          <Link href="/" className="inline-block">
             <img 
               src={logoImg} 
               alt="Fana Naturals" 
               className="h-12 md:h-16 w-auto object-contain"
             />
-          </a>
+          </Link>
         </motion.div>
 
         <nav className="hidden md:flex flex-1 justify-center space-x-12">
@@ -33,14 +34,14 @@ export default function Header() {
             { name: 'Industry', href: '/industry' },
             { name: 'About', href: '/about' }
           ].map((item) => (
-            <a 
+            <Link 
               key={item.name} 
               href={item.href}
               className="text-xs uppercase tracking-[0.15em] text-foreground/70 hover:text-foreground transition-colors duration-300 relative group font-sans"
             >
               {item.name}
               <span className="absolute -bottom-2 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
           ))}
         </nav>
 

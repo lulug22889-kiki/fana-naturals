@@ -1,4 +1,5 @@
 import { Instagram, Linkedin } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   return (
@@ -31,8 +32,8 @@ export default function Footer() {
           </div>
           
           <div className="flex space-x-6 font-sans text-xs text-foreground/40 tracking-[0.1em] uppercase">
-            <a href="/privacy" className="hover:text-foreground transition-colors">Privacy</a>
-            <a href="/terms" className="hover:text-foreground transition-colors">Terms</a>
+            <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
             <span>© {new Date().getFullYear()}</span>
           </div>
         </div>

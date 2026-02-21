@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Heart, Droplets, Lightbulb, Zap } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -110,13 +111,13 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            <a 
+            <Link 
               href={heroCtaLink}
               className="inline-block px-10 py-4 border border-white/40 text-white uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-primary transition-all duration-500 backdrop-blur-sm bg-white/5"
               data-testid="link-explore"
             >
               {heroCtaText}
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -326,9 +327,9 @@ export default function Home() {
               Innovation that respects tradition. We provide commercial-grade supplies and high-performance machinery designed by those who have spent a lifetime in the field. We bring the industry’s most advanced technologies to beekeepers who demand durability.
             </motion.p>
             <motion.div variants={viscousFade} className="mt-16">
-              <a href="/products" className="inline-block border-b border-accent pb-2 text-accent uppercase tracking-[0.15em] text-sm font-sans hover:text-white hover:border-white transition-colors duration-500">
+              <Link href="/products" className="inline-block border-b border-accent pb-2 text-accent uppercase tracking-[0.15em] text-sm font-sans hover:text-white hover:border-white transition-colors duration-500">
                 Explore the Workshop
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
