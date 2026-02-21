@@ -32,8 +32,16 @@ app.use(
     target: `https://${projectId}.api.sanity.io`,
     changeOrigin: true,
     pathRewrite: { "^/sanity-proxy/api": "" },
+    timeout: 30000,
+    proxyTimeout: 30000,
     on: {
       proxyReq: addSanityAuth,
+      error: (err: any, _req: any, res: any) => {
+        if (res.writeHead) {
+          res.writeHead(504, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "Proxy timeout" }));
+        }
+      },
     },
   })
 );
@@ -44,8 +52,16 @@ app.use(
     target: `https://${projectId}.apicdn.sanity.io`,
     changeOrigin: true,
     pathRewrite: { "^/sanity-proxy/cdn": "" },
+    timeout: 30000,
+    proxyTimeout: 30000,
     on: {
       proxyReq: addSanityAuth,
+      error: (err: any, _req: any, res: any) => {
+        if (res.writeHead) {
+          res.writeHead(504, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "Proxy timeout" }));
+        }
+      },
     },
   })
 );
@@ -56,8 +72,16 @@ app.use(
     target: "https://api.sanity.io",
     changeOrigin: true,
     pathRewrite: { "^/sanity-proxy/global-api": "" },
+    timeout: 30000,
+    proxyTimeout: 30000,
     on: {
       proxyReq: addSanityAuth,
+      error: (err: any, _req: any, res: any) => {
+        if (res.writeHead) {
+          res.writeHead(504, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: "Proxy timeout" }));
+        }
+      },
     },
   })
 );
