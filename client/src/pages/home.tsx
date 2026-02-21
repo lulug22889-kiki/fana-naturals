@@ -88,7 +88,7 @@ export default function Home() {
             className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-[1.15] tracking-tight"
             style={{ textShadow: '0 10px 40px rgba(0,0,0,0.6), 0 2px 10px rgba(0,0,0,0.4)' }}
           >
-            Global Vision.<br />
+            The Global Standard<br />
             <span className="font-sans font-light uppercase tracking-[0.25em] text-sm md:text-base lg:text-lg mt-8 block text-white/90" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
               Uncompromising Quality. Since 1989.
             </span>
