@@ -18,6 +18,13 @@ declare module "http" {
 }
 
 const projectId = "cmz2cc1a";
+const sanityToken = process.env.SANITY_API_TOKEN || "";
+
+function addSanityAuth(proxyReq: any) {
+  if (sanityToken) {
+    proxyReq.setHeader("Authorization", `Bearer ${sanityToken}`);
+  }
+}
 
 app.use(
   "/sanity-proxy/api",
@@ -25,6 +32,9 @@ app.use(
     target: `https://${projectId}.api.sanity.io`,
     changeOrigin: true,
     pathRewrite: { "^/sanity-proxy/api": "" },
+    on: {
+      proxyReq: addSanityAuth,
+    },
   })
 );
 
@@ -34,6 +44,9 @@ app.use(
     target: `https://${projectId}.apicdn.sanity.io`,
     changeOrigin: true,
     pathRewrite: { "^/sanity-proxy/cdn": "" },
+    on: {
+      proxyReq: addSanityAuth,
+    },
   })
 );
 
@@ -43,6 +56,9 @@ app.use(
     target: "https://api.sanity.io",
     changeOrigin: true,
     pathRewrite: { "^/sanity-proxy/global-api": "" },
+    on: {
+      proxyReq: addSanityAuth,
+    },
   })
 );
 
