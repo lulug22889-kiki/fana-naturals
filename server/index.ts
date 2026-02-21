@@ -64,16 +64,6 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  const studioPath = path.resolve(__dirname, "..", "dist", "studio");
-  app.use("/admin", express.static(studioPath));
-  app.use("/static", express.static(path.join(studioPath, "static")));
-  app.use((req: Request, res: Response, next: NextFunction) => {
-    if (req.path.startsWith("/admin")) {
-      return res.sendFile(path.join(studioPath, "index.html"));
-    }
-    next();
-  });
-
   await registerRoutes(httpServer, app);
 
   app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
