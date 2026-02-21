@@ -52,3 +52,5 @@ mockupState = "FULLSTACK"
 [userenv.shared]
 SANITY_STUDIO_PROJECT_ID = "cmz2cc1a"
 SANITY_STUDIO_DATASET = "production"
+SANITY_PROJECT_ID = "cmz2cc1a"
+SANITY_DATASET = "production"

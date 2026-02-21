@@ -1,11 +1,12 @@
 import { build as esbuild } from "esbuild";
 import { build as viteBuild } from "vite";
-import { rm, readFile } from "fs/promises";
+import { rm, readFile, cp, access } from "fs/promises";
+import { execSync } from "child_process";
 
-// server deps to bundle to reduce openat(2) syscalls
-// which helps cold start times
 const allowlist = [
   "@google/generative-ai",
+  "@sanity/client",
+  "@sanity/image-url",
   "axios",
   "connect-pg-simple",
   "cors",
@@ -15,6 +16,7 @@ const allowlist = [
   "express",
   "express-rate-limit",
   "express-session",
+  "http-proxy-middleware",
   "jsonwebtoken",
   "memorystore",
   "multer",
@@ -37,6 +39,24 @@ async function buildAll() {
 
   console.log("building client...");
   await viteBuild();
+
+  console.log("building sanity studio...");
+  try {
+    execSync(
+      "SANITY_STUDIO_PROJECT_ID=cmz2cc1a SANITY_STUDIO_DATASET=production npx sanity build dist/studio --yes",
+      { stdio: "inherit" }
+    );
+  } catch (e) {
+    console.warn("Sanity Studio build failed, skipping...");
+  }
+
+  try {
+    await access("dist/studio/static");
+    console.log("copying studio static assets to dist/public/static...");
+    await cp("dist/studio/static", "dist/public/static", { recursive: true });
+  } catch {
+    console.warn("No studio static assets to copy");
+  }
 
   console.log("building server...");
   const pkg = JSON.parse(await readFile("package.json", "utf-8"));

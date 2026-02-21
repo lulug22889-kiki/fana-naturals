@@ -26,7 +26,6 @@ export default function Home() {
   const { data: pageData } = useQuery<any>({
     queryKey: ["/api/sanity/page/home"],
     retry: false,
-    staleTime: 1000 * 60 * 5,
   });
 
   const heroHeadline = pageData?.heroHeadline || "The Global Vision";
