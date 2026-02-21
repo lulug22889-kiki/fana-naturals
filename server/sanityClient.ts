@@ -11,7 +11,7 @@ export const sanityClient = createClient({
   apiVersion: '2023-05-03',
   useCdn: false,
   token: token || undefined,
-  perspective: 'previewDrafts',
+  perspective: 'drafts',
 });
 
 const builder = createImageUrlBuilder({ projectId, dataset });
