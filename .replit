@@ -46,3 +46,9 @@ waitForPort = 5000
 [agent]
 stack = "MOCKUP_JS"
 mockupState = "FULLSTACK"
+
+[userenv]
+
+[userenv.shared]
+SANITY_STUDIO_PROJECT_ID = "cmz2cc1a"
+SANITY_STUDIO_DATASET = "production"
