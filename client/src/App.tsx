@@ -3,7 +3,6 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { lazy, Suspense } from "react";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import About from "@/pages/about";
@@ -12,8 +11,6 @@ import Harvest from "@/pages/harvest";
 import Industry from "@/pages/industry";
 import Privacy from "@/pages/privacy";
 import Terms from "@/pages/terms";
-
-const StudioPage = lazy(() => import("@/pages/studio"));
 
 function Router() {
   return (
@@ -25,16 +22,6 @@ function Router() {
       <Route path="/industry" component={Industry} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
-      <Route path="/admin/:rest*">
-        <Suspense fallback={<div style={{display:"flex",alignItems:"center",justifyContent:"center",height:"100vh"}}>Loading Studio...</div>}>
-          <StudioPage />
-        </Suspense>
-      </Route>
-      <Route path="/admin">
-        <Suspense fallback={<div style={{display:"flex",alignItems:"center",justifyContent:"center",height:"100vh"}}>Loading Studio...</div>}>
-          <StudioPage />
-        </Suspense>
-      </Route>
       <Route component={NotFound} />
     </Switch>
   );

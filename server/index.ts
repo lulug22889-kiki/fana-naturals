@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
+import { createProxyMiddleware } from "http-proxy-middleware";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -15,6 +16,80 @@ declare module "http" {
     rawBody: unknown;
   }
 }
+
+const projectId = "cmz2cc1a";
+
+app.use(
+  "/sanity-proxy/api",
+  createProxyMiddleware({
+    target: `https://${projectId}.api.sanity.io`,
+    changeOrigin: true,
+    pathRewrite: { "^/sanity-proxy/api": "" },
+  })
+);
+
+app.use(
+  "/sanity-proxy/cdn",
+  createProxyMiddleware({
+    target: `https://${projectId}.apicdn.sanity.io`,
+    changeOrigin: true,
+    pathRewrite: { "^/sanity-proxy/cdn": "" },
+  })
+);
+
+const studioPath = path.resolve(__dirname, "..", "dist", "studio");
+app.use("/static", express.static(path.join(studioPath, "static")));
+
+import fs from "fs";
+const studioHtml = fs.readFileSync(path.join(studioPath, "index.html"), "utf-8");
+const proxyScript = `<script>
+(function() {
+  var PID = "${projectId}";
+  function rewrite(url) {
+    if (typeof url !== "string") return null;
+    if (url.indexOf(PID + ".api.sanity.io") !== -1) {
+      var p = new URL(url);
+      return "/sanity-proxy/api" + p.pathname + p.search;
+    }
+    if (url.indexOf(PID + ".apicdn.sanity.io") !== -1) {
+      var p = new URL(url);
+      return "/sanity-proxy/cdn" + p.pathname + p.search;
+    }
+    return null;
+  }
+  var origFetch = window.fetch.bind(window);
+  window.fetch = function(input, init) {
+    var url = typeof input === "string" ? input : (input instanceof URL ? input.toString() : (input && input.url ? input.url : ""));
+    var proxied = rewrite(url);
+    if (proxied) {
+      if (typeof input === "string" || input instanceof URL) return origFetch(proxied, init);
+      return origFetch(new Request(proxied, input), init);
+    }
+    return origFetch(input, init);
+  };
+  var OrigXHR = window.XMLHttpRequest;
+  var origOpen = OrigXHR.prototype.open;
+  OrigXHR.prototype.open = function(method, url) {
+    var proxied = rewrite(typeof url === "string" ? url : url.toString());
+    if (proxied) {
+      return origOpen.apply(this, [method, proxied].concat(Array.prototype.slice.call(arguments, 2)));
+    }
+    return origOpen.apply(this, arguments);
+  };
+})();
+</script>`;
+const modifiedStudioHtml = studioHtml.replace("<head>", "<head>" + proxyScript);
+
+app.use("/admin", (req, res, next) => {
+  if (req.path === "/favicon.ico") {
+    return res.sendFile(path.join(studioPath, "favicon.ico"));
+  }
+  if (!req.path.startsWith("/static")) {
+    res.setHeader("Content-Type", "text/html");
+    return res.send(modifiedStudioHtml);
+  }
+  next();
+});
 
 app.use(
   express.json({
