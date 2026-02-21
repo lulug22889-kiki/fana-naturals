@@ -88,7 +88,7 @@ export default function Home() {
             className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-8 leading-[1.1] tracking-tight"
             style={{ textShadow: '0 10px 40px rgba(0,0,0,0.6), 0 2px 10px rgba(0,0,0,0.4)' }}
           >
-            The Art of Apiculture,<br />
+            Mastering the Hive,<br />
             <span className="italic font-light opacity-100 tracking-normal text-4xl md:text-5xl lg:text-6xl mt-6 block">Pure Origin & Precision Design.</span>
           </motion.h1>
           
